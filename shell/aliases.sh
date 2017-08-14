@@ -1,0 +1,19 @@
+
+
+# Editor
+alias e='vimr'
+alias vim='nvim'
+
+# Git
+alias gs='git status'
+
+grb () {
+  git checkout master
+  git pull
+  git checkout -
+  git rebase master
+}
+
+# Docker
+alias d='docker-compose'
+alias
