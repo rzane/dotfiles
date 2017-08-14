@@ -1,5 +1,3 @@
-
-
 # Editor
 alias e='vimr'
 alias vim='nvim'
@@ -16,4 +14,4 @@ grb () {
 
 # Docker
 alias d='docker-compose'
-alias
+alias dr='docker-compose run'
