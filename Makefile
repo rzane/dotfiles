@@ -1,12 +1,7 @@
 .PHONY: install build dev
 
-link:
-ifneq ($(realpath .), $(HOME)/.dotfiles)
-	ln -sf $(realpath .) ~/.dotfiles
-endif
-
-install: link
-	ln -sf ~/.dotfiles/zshrc $(HOME)/.zshrc
+install:
+	ln -sf $(realpath zshrc) $(HOME)/.zshrc
 
 build:
 	docker build -t rzane/dotfiles .
