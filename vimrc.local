@@ -5,9 +5,7 @@ set clipboard=unnamed
 colorscheme dracula
 
 " Use Source Code Pro font
-if has('gui_running')
-  set guifont=Source\ Code\ Pro:h15
-endif
+set guifont=Source\ Code\ Pro:h15
 
 " Disable spell
 set nospell
@@ -45,9 +43,6 @@ noremap <leader>p% :NERDTreeFind<CR>
 " Buffers
 """""""""""""""""""""""""""
 
-" Persist scratch buffer across sessions
-let g:scratch_persistence_file = '/tmp/vim-scratch'
-
 " Show buffers
 noremap <leader>bb :CtrlPBuffer<CR>
 
@@ -56,9 +51,6 @@ noremap <leader>bd :Bdelete<CR>
 
 " Flip to previous buffer
 noremap <leader><tab> :b#<CR>
-
-" Open scratch buffer
-noremap <leader>bs :Scratch<CR>
 
 """""""""""""""""""""""""""
 " Windows

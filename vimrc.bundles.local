@@ -6,7 +6,6 @@ Plug 'dracula/vim'               " Theme
 Plug 'airblade/vim-gitgutter'    " Show git diffs on the side
 Plug 'haya14busa/incsearch.vim'  " Incremental search
 Plug 'osyo-manga/vim-over'       " Preview find/replace
-Plug 'mtth/scratch.vim'          " Scratch buffer
 Plug 'tpope/vim-dispatch'        " Better rspec errors
 Plug 'moll/vim-bbye'             " Close buffer without closing window
 Plug 'AndrewRadev/splitjoin.vim' " Toggle multi-line and single-line code
