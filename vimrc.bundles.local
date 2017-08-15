@@ -1,0 +1,25 @@
+" Map the leader to space. This has to be done here,
+" because it needs to be set before the vimrc is loaded.
+let mapleader = "\<SPACE>"
+
+Plug 'dracula/vim'               " Theme
+Plug 'airblade/vim-gitgutter'    " Show git diffs on the side
+Plug 'haya14busa/incsearch.vim'  " Incremental search
+Plug 'osyo-manga/vim-over'       " Preview find/replace
+Plug 'mtth/scratch.vim'          " Scratch buffer
+Plug 'tpope/vim-dispatch'        " Better rspec errors
+Plug 'moll/vim-bbye'             " Close buffer without closing window
+Plug 'AndrewRadev/splitjoin.vim' " Toggle multi-line and single-line code
+Plug 'godlygeek/tabular'         " Alignment
+Plug 'jiangmiao/auto-pairs'      " Auto-close
+Plug 'alvan/vim-closetag'        " Auto-close html
+Plug 'elixir-lang/vim-elixir'    " Elixir support
+" Plug 'maralla/completor.vim'     " Async completion
+Plug 'w0rp/ale'                  " Async linting
+Plug 'IN3D/vim-raml'             " RAML syntax
+
+" Disable Align, because it breaks my SPC w = keybinding
+Plug 'Align', { 'on': [] }
+
+" Disable syntastic in favor of ale
+Plug 'scrooloose/syntastic', { 'on': [] }

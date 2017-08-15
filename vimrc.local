@@ -1,0 +1,176 @@
+" Use the system clipboard
+set clipboard=unnamed
+
+" Enable the dracula theme
+colorscheme dracula
+
+" Use Source Code Pro font
+if has('gui_running')
+  set guifont=Source\ Code\ Pro:h15
+endif
+
+" Disable spell
+set nospell
+
+" Disable vim-indent-guides, because it's ugly
+let g:indent_guides_enable_on_vim_startup = 0
+
+" When editing a file, always jump to the last known cursor position.
+" Don't do it for commit messages, when the position is invalid, or when
+" inside an event handler (happens when dropping a file on gvim).
+autocmd BufReadPost *
+  \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
+  \   exe "normal g`\"" |
+  \ endif
+
+"""""""""""""""""""""""""""
+" Shell
+"""""""""""""""""""""""""""
+
+noremap ! :call feedkeys(":! ")<CR>
+
+"""""""""""""""""""""""""""
+" Files
+"""""""""""""""""""""""""""
+
+" Show nerdtree on startup, because it doesn't respond to NERDTreeToggle
+let g:NERDTreeHijackNetrw = 0
+
+noremap <leader>ff :CtrlP<CR>
+noremap <leader>pf :CtrlPRoot<CR>
+noremap <leader>pt :NERDTreeToggle<CR>
+noremap <leader>p% :NERDTreeFind<CR>
+
+"""""""""""""""""""""""""""
+" Buffers
+"""""""""""""""""""""""""""
+
+" Persist scratch buffer across sessions
+let g:scratch_persistence_file = '/tmp/vim-scratch'
+
+" Show buffers
+noremap <leader>bb :CtrlPBuffer<CR>
+
+" Delete buffer
+noremap <leader>bd :Bdelete<CR>
+
+" Flip to previous buffer
+noremap <leader><tab> :b#<CR>
+
+" Open scratch buffer
+noremap <leader>bs :Scratch<CR>
+
+"""""""""""""""""""""""""""
+" Windows
+"""""""""""""""""""""""""""
+
+" Split normally
+set splitbelow
+set splitright
+
+" Split
+noremap <leader>w- :split<CR>
+noremap <leader>w/ :vsplit<CR>
+
+" Balance windows
+noremap <leader>w= :wincmd =<CR>
+
+" Delete window
+noremap <leader>wd :q<CR>
+
+" Cycle
+noremap <leader>ww :wincmd w<CR>
+
+" Navigate
+noremap <leader>wh :wincmd h<CR>
+noremap <leader>wj :wincmd j<CR>
+noremap <leader>wk :wincmd k<CR>
+noremap <leader>wl :wincmd l<CR>
+
+" Move
+noremap <leader>wH :wincmd H<CR>
+noremap <leader>wJ :wincmd J<CR>
+noremap <leader>wK :wincmd K<CR>
+noremap <leader>wL :wincmd L<CR>
+
+" Jump to window with number keys 1-9
+let i = 1
+while i <= 9
+  execute 'nnoremap ' . i . ' :' . i . 'wincmd w<CR>'
+  let i = i + 1
+endwhile
+
+"""""""""""""""""""""""""""
+" Search
+"""""""""""""""""""""""""""
+
+" incremental search
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+
+" Project with search
+noremap <leader>sp :Ag<space>
+
+" Search current file
+nnoremap <leader>ss :Ag  %<Left><Left>
+
+" Clear highlight
+noremap <leader>sc :noh<CR>
+
+"""""""""""""""""""""""""""
+" Git
+"""""""""""""""""""""""""""
+
+" Bindings for fugitive
+noremap <leader>gs :Gstatus<CR>
+noremap <leader>gc :Gcommit<CR>
+
+"""""""""""""""""""""""""""
+" Completion
+"""""""""""""""""""""""""""
+
+" Wait 120ms before showing the popup
+let g:completor_completion_delay = 200
+
+"""""""""""""""""""""""""""
+" Linting
+"""""""""""""""""""""""""""
+
+let g:airline#extensions#ale#enabled = 1
+
+let g:ale_linters = {
+\ 'javascript': ['eslint'],
+\ 'ruby': ['ruby', 'rubocop'],
+\ 'eruby': [],
+\}
+
+"""""""""""""""""""""""""""
+" Ruby
+"""""""""""""""""""""""""""
+
+" Convert ruby block syntax
+let g:splitjoin_split_mapping = '<leader>m{'
+let g:splitjoin_join_mapping = '<leader>m}'
+
+" Configure vim-rails runner
+noremap <leader>mt :Runner<CR>
+
+"""""""""""""""""""""""""""
+" HTML
+"""""""""""""""""""""""""""
+
+let g:closetag_filenames = '*.html,*.xhtml,*.html.erb'
+
+"""""""""""""""""""""""""""
+" Shell
+"""""""""""""""""""""""""""
+
+noremap <leader>tt :terminal zsh<CR>
+
+"""""""""""""""""""""""""""
+" Movement
+"""""""""""""""""""""""""""
+
+map <Up> [m
+map <Down> ]m
