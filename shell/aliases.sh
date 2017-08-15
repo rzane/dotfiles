@@ -1,7 +1,3 @@
-# Editor
-alias e='vimr'
-alias vim='nvim'
-
 # Git
 alias gs='git status'
 
