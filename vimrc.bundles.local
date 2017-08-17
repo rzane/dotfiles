@@ -2,20 +2,17 @@
 " because it needs to be set before the vimrc is loaded.
 let mapleader = "\<SPACE>"
 
-Plug 'dracula/vim'               " Theme
-Plug 'airblade/vim-gitgutter'    " Show git diffs on the side
-Plug 'haya14busa/incsearch.vim'  " Incremental search
-Plug 'osyo-manga/vim-over'       " Preview find/replace
-Plug 'tpope/vim-dispatch'        " Better rspec errors
-Plug 'moll/vim-bbye'             " Close buffer without closing window
-Plug 'AndrewRadev/splitjoin.vim' " Toggle multi-line and single-line code
-Plug 'godlygeek/tabular'         " Alignment
-Plug 'jiangmiao/auto-pairs'      " Auto-close
-Plug 'alvan/vim-closetag'        " Auto-close html
-Plug 'elixir-lang/vim-elixir'    " Elixir support
-" Plug 'maralla/completor.vim'     " Async completion
-Plug 'w0rp/ale'                  " Async linting
-Plug 'IN3D/vim-raml'             " RAML syntax
+Plug 'dracula/vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'haya14busa/incsearch.vim'
+Plug 'tpope/vim-dispatch'
+Plug 'moll/vim-bbye'
+Plug 'godlygeek/tabular'
+Plug 'jiangmiao/auto-pairs'
+Plug 'alvan/vim-closetag'
+Plug 'w0rp/ale'
+Plug 'elixir-lang/vim-elixir'
+Plug 'IN3D/vim-raml'
 
 " Disable Align, because it breaks my SPC w = keybinding
 Plug 'Align', { 'on': [] }

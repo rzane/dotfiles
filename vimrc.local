@@ -21,36 +21,46 @@ autocmd BufReadPost *
   \   exe "normal g`\"" |
   \ endif
 
+" Shut the hell up
+set vb
+set t_vb=
+
 """""""""""""""""""""""""""
 " Shell
 """""""""""""""""""""""""""
 
-noremap ! :call feedkeys(":! ")<CR>
+nnoremap ! :call feedkeys(":! ")<CR>
 
 """""""""""""""""""""""""""
 " Files
 """""""""""""""""""""""""""
 
-" Show nerdtree on startup, because it doesn't respond to NERDTreeToggle
-let g:NERDTreeHijackNetrw = 0
+" Quit nerdtree when a file gets opened
+let NERDTreeQuitOnOpen = 1
 
-noremap <leader>ff :CtrlP<CR>
-noremap <leader>pf :CtrlPRoot<CR>
-noremap <leader>pt :NERDTreeToggle<CR>
-noremap <leader>p% :NERDTreeFind<CR>
+" Show hidden files
+let NERDTreeShowHidden=1
+
+nnoremap <leader>ff :CtrlP<CR>
+nnoremap <leader>pf :CtrlPRoot<CR>
+nnoremap <leader>pt :NERDTreeToggle<CR>
+nnoremap <leader>p% :NERDTreeFind<CR>
 
 """""""""""""""""""""""""""
 " Buffers
 """""""""""""""""""""""""""
 
 " Show buffers
-noremap <leader>bb :CtrlPBuffer<CR>
+nnoremap <leader>bb :CtrlPBuffer<CR>
 
 " Delete buffer
-noremap <leader>bd :Bdelete<CR>
+nnoremap <leader>bd :Bdelete<CR>
+
+" Delete all buffers
+nnoremap <leader>bm :bufdo :Bdelete<CR>
 
 " Flip to previous buffer
-noremap <leader><tab> :b#<CR>
+nnoremap <leader><tab> :b#<CR>
 
 """""""""""""""""""""""""""
 " Windows
@@ -61,29 +71,29 @@ set splitbelow
 set splitright
 
 " Split
-noremap <leader>w- :split<CR>
-noremap <leader>w/ :vsplit<CR>
+nnoremap <leader>w- :split<CR>
+nnoremap <leader>w/ :vsplit<CR>
 
 " Balance windows
-noremap <leader>w= :wincmd =<CR>
+nnoremap <leader>w= :wincmd =<CR>
 
 " Delete window
-noremap <leader>wd :q<CR>
+nnoremap <leader>wd :bdelete<CR>
 
 " Cycle
-noremap <leader>ww :wincmd w<CR>
+nnoremap <leader>ww :wincmd w<CR>
 
 " Navigate
-noremap <leader>wh :wincmd h<CR>
-noremap <leader>wj :wincmd j<CR>
-noremap <leader>wk :wincmd k<CR>
-noremap <leader>wl :wincmd l<CR>
+nnoremap <leader>wh :wincmd h<CR>
+nnoremap <leader>wj :wincmd j<CR>
+nnoremap <leader>wk :wincmd k<CR>
+nnoremap <leader>wl :wincmd l<CR>
 
 " Move
-noremap <leader>wH :wincmd H<CR>
-noremap <leader>wJ :wincmd J<CR>
-noremap <leader>wK :wincmd K<CR>
-noremap <leader>wL :wincmd L<CR>
+nnoremap <leader>wH :wincmd H<CR>
+nnoremap <leader>wJ :wincmd J<CR>
+nnoremap <leader>wK :wincmd K<CR>
+nnoremap <leader>wL :wincmd L<CR>
 
 " Jump to window with number keys 1-9
 let i = 1
@@ -102,13 +112,13 @@ map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 
 " Project with search
-noremap <leader>sp :Ag<space>
+nnoremap <leader>sp :Ag<space>
 
 " Search current file
 nnoremap <leader>ss :Ag  %<Left><Left>
 
 " Clear highlight
-noremap <leader>sc :noh<CR>
+nnoremap <leader>sc :noh<CR>
 
 """""""""""""""""""""""""""
 " Git
@@ -117,13 +127,6 @@ noremap <leader>sc :noh<CR>
 " Bindings for fugitive
 noremap <leader>gs :Gstatus<CR>
 noremap <leader>gc :Gcommit<CR>
-
-"""""""""""""""""""""""""""
-" Completion
-"""""""""""""""""""""""""""
-
-" Wait 120ms before showing the popup
-let g:completor_completion_delay = 200
 
 """""""""""""""""""""""""""
 " Linting
@@ -141,9 +144,8 @@ let g:ale_linters = {
 " Ruby
 """""""""""""""""""""""""""
 
-" Convert ruby block syntax
-let g:splitjoin_split_mapping = '<leader>m{'
-let g:splitjoin_join_mapping = '<leader>m}'
+" Toggle ruby block
+let g:blockle_mapping = '<Leader>m{'
 
 " Configure vim-rails runner
 noremap <leader>mt :Runner<CR>
