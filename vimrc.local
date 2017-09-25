@@ -13,6 +13,12 @@ set nospell
 " Disable vim-indent-guides, because it's ugly
 let g:indent_guides_enable_on_vim_startup = 0
 
+" Start neocomplet at startup
+let g:neocomplete#enable_at_startup = 1
+
+" Strip whitespace on save
+autocmd BufEnter * EnableStripWhitespaceOnSave
+
 " When editing a file, always jump to the last known cursor position.
 " Don't do it for commit messages, when the position is invalid, or when
 " inside an event handler (happens when dropping a file on gvim).
@@ -34,6 +40,9 @@ nnoremap ! :call feedkeys(":! ")<CR>
 """""""""""""""""""""""""""
 " Files
 """""""""""""""""""""""""""
+
+" Don't hijack on open, because it's hard to close with toggle
+let NERDTreeHijackNetrw = 0
 
 " Quit nerdtree when a file gets opened
 let NERDTreeQuitOnOpen = 1
@@ -139,6 +148,19 @@ let g:ale_linters = {
 \ 'ruby': ['ruby', 'rubocop'],
 \ 'eruby': [],
 \}
+
+let g:ale_fixers = {
+\ 'javascript': ['eslint'],
+\ 'ruby': ['rubocop'],
+\}
+
+let g:ale_sign_error = '✖'
+let g:ale_sign_warning = '⚠'
+
+highlight ALEErrorSign   guibg=NONE guifg=red ctermbg=NONE ctermfg=red
+highlight ALEWarningSign guibg=NONE guifg=yellow ctermbg=NONE ctermfg=yellow
+
+nnoremap <leader>af :ALEFix<CR>
 
 """""""""""""""""""""""""""
 " Ruby
