@@ -10,6 +10,17 @@ set guifont=Source\ Code\ Pro:h15
 " Disable spell
 set nospell
 
+" Relative number is slow sometimes
+set norelativenumber
+
+" Shut the hell up
+set vb
+set t_vb=
+
+" Skinny cursor in insert mode, fat cursor in normal mode
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+
 " Disable vim-indent-guides, because it's ugly
 let g:indent_guides_enable_on_vim_startup = 0
 
@@ -26,10 +37,6 @@ autocmd BufReadPost *
   \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
   \   exe "normal g`\"" |
   \ endif
-
-" Shut the hell up
-set vb
-set t_vb=
 
 """""""""""""""""""""""""""
 " Shell
