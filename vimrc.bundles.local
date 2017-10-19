@@ -12,8 +12,10 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'alvan/vim-closetag'
 Plug 'w0rp/ale'
 Plug 'elixir-lang/vim-elixir'
+Plug 'slashmili/alchemist.vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'Shougo/neocomplete.vim'
+Plug 'ruanyl/vim-gh-line'
 
 " Disable Align, because it breaks my SPC w = keybinding
 Plug 'Align', { 'on': [] }

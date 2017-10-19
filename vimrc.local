@@ -17,6 +17,10 @@ set norelativenumber
 set vb
 set t_vb=
 
+" Make the vsplit prettier
+set fillchars+=vert:│
+highlight VertSplit ctermbg=NONE guibg=NONE
+
 " Skinny cursor in insert mode, fat cursor in normal mode
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
@@ -52,7 +56,7 @@ nnoremap ! :call feedkeys(":! ")<CR>
 let NERDTreeHijackNetrw = 0
 
 " Quit nerdtree when a file gets opened
-let NERDTreeQuitOnOpen = 1
+" let NERDTreeQuitOnOpen = 1
 
 " Show hidden files
 let NERDTreeShowHidden=1
@@ -136,6 +140,12 @@ nnoremap <leader>ss :Ag  %<Left><Left>
 " Clear highlight
 nnoremap <leader>sc :noh<CR>
 
+" Search the project for the visual selection
+vnoremap <leader>sp "ky:Ag <C-R>k<CR>
+
+" Search the current file for the visual selection
+vnoremap <leader>ss "ky:Ag <C-R>k %<CR>
+
 """""""""""""""""""""""""""
 " Git
 """""""""""""""""""""""""""
@@ -154,6 +164,8 @@ let g:ale_linters = {
 \ 'javascript': ['eslint'],
 \ 'ruby': ['ruby', 'rubocop'],
 \ 'eruby': [],
+\ 'elixir': [],
+\ 'python': ['flake8'],
 \}
 
 let g:ale_fixers = {
