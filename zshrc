@@ -62,6 +62,11 @@ grb () {
 alias d='docker-compose'
 alias dr='docker-compose run'
 
+docker-clean () {
+  docker rm --force $(docker ps -qa)
+  docker rmi --force $(docker images -qa)
+}
+
 ########################
 # Customization
 ########################
