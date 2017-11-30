@@ -58,6 +58,14 @@ grb () {
   git rebase master
 }
 
+git-clean-branches () {
+  git branch -d $(git branch --merged master | grep -v master)
+
+  echo
+  echo "The following unmerged branches remain:"
+  git branch --no-merged master
+}
+
 # Docker
 alias d='docker-compose'
 alias dr='docker-compose run'
@@ -65,6 +73,18 @@ alias dr='docker-compose run'
 docker-clean () {
   docker rm --force $(docker ps -qa)
   docker rmi --force $(docker images -qa)
+}
+
+# Find/replace
+
+ag-replace () {
+  if [ "$1" = "--commit" ]; then
+    find . -type f -name "*.bak" -delete
+  elif [ "$1" = "--revert" ]; then
+    find . -type f -name "*.bak" -exec rename -f 's/\.bak$//' {} \;
+  else
+    ag -0 -l "$1" | xargs -0 perl -pi.bak -e "s/$1/$2/g"
+  fi
 }
 
 ########################
