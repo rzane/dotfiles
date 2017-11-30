@@ -151,8 +151,9 @@ vnoremap <leader>ss "ky:Ag <C-R>k %<CR>
 """""""""""""""""""""""""""
 
 " Bindings for fugitive
-noremap <leader>gs :Gstatus<CR>
-noremap <leader>gc :Gcommit<CR>
+nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>gc :Gcommit<CR>
+nnoremap <leader>gp :Gpush<CR>
 
 """""""""""""""""""""""""""
 " Linting
