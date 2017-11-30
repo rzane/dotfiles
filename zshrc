@@ -83,7 +83,7 @@ ag-replace () {
   elif [ "$1" = "--revert" ]; then
     find . -type f -name "*.bak" -exec rename -f 's/\.bak$//' {} \;
   else
-    ag -0 -l "$1" | xargs -0 perl -pi.bak -e "s/$1/$2/g"
+    ag -0 -l "$1" "${@:3}" | xargs -0 perl -pi.bak -e "s/$1/$2/g"
   fi
 }
 
