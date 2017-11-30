@@ -16,6 +16,7 @@ Plug 'slashmili/alchemist.vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'Shougo/neocomplete.vim'
 Plug 'ruanyl/vim-gh-line'
+Plug 'leafgarland/typescript-vim'
 
 " Disable Align, because it breaks my SPC w = keybinding
 Plug 'Align', { 'on': [] }
