@@ -4,6 +4,7 @@ let mapleader = "\<SPACE>"
 
 Plug 'dracula/vim'
 Plug 'airblade/vim-gitgutter'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'haya14busa/incsearch.vim'
 Plug 'tpope/vim-dispatch'
 Plug 'moll/vim-bbye'
