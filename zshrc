@@ -77,7 +77,7 @@ docker-clean () {
 
 # Find/replace
 
-ag-replace () {
+gsub () {
   if [ "$1" = "--commit" ]; then
     find . -type f -name "*.bak" -delete
   elif [ "$1" = "--revert" ]; then
