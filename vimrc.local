@@ -59,7 +59,8 @@ let NERDTreeHijackNetrw = 0
 " let NERDTreeQuitOnOpen = 1
 
 " Show hidden files
-let NERDTreeShowHidden=1
+let NERDTreeShowHidden = 1
+let g:ctrlp_show_hidden = 1
 
 nnoremap <leader>ff :CtrlP<CR>
 nnoremap <leader>pf :CtrlPRoot<CR>
