@@ -165,6 +165,7 @@ let g:airline#extensions#ale#enabled = 1
 let g:ale_linters = {
 \ 'javascript': ['eslint'],
 \ 'ruby': ['ruby', 'rubocop'],
+\ 'typescript': ['tslint'],
 \ 'eruby': [],
 \ 'elixir': [],
 \ 'python': ['flake8'],
@@ -173,6 +174,8 @@ let g:ale_linters = {
 let g:ale_fixers = {
 \ 'javascript': ['eslint'],
 \ 'ruby': ['rubocop'],
+\ 'typescript': ['tslint'],
+\ 'elixir': ['mix_format'],
 \}
 
 let g:ale_sign_error = '✖'
