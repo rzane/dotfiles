@@ -59,11 +59,7 @@ grb () {
 }
 
 git-clean-branches () {
-  git branch -d $(git branch --merged master | grep -v master)
-
-  echo
-  echo "The following unmerged branches remain:"
-  git branch --no-merged master
+  git branch --merged master | egrep -v "(^\*|master)" | xargs git branch -d
 }
 
 # Docker
