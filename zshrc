@@ -38,11 +38,8 @@ bindkey '^[[B' history-substring-search-down
 # Set project paths for project jump
 PROJECT_PATHS=(~/Workspace)
 
-# Load Kiex for Elixir
-test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
-
-# Load RVM for Ruby
-test -s "$HOME/.rvm/scripts/rvm" && source "$HOME/.rvm/scripts/rvm"
+test -s "$HOME/.asdf/asdf.sh" && source "$HOME/.asdf/asdf.sh"
+test -s "$HOME/.asdf/completions/asdf.bash" && source "$HOME/.asdf/completions/asdf.bash"
 
 ########################
 # Aliases
@@ -90,3 +87,4 @@ gsub () {
 if [ -e ~/.zshrc.local ]; then
   source ~/.zshrc.local
 fi
+
