@@ -1,6 +1,6 @@
 tap "caskroom/cask"
 
-brew "vim", args: ["with-lua", "with-python"]
+brew "nvim"
 brew "ag"
 brew "zsh"
 brew "rename"
