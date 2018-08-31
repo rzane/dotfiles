@@ -45,6 +45,10 @@ test -s "$HOME/.asdf/completions/asdf.bash" && source "$HOME/.asdf/completions/a
 # Aliases
 ########################
 
+# Inspired by https://remysharp.com/2018/08/23/cli-improved
+alias cat=bat
+alias preview="fzf --preview 'bat --color \"always\" {}'"
+
 # Git
 alias gs='git status'
 
@@ -63,13 +67,7 @@ git-clean-branches () {
 alias d='docker-compose'
 alias dr='docker-compose run'
 
-docker-clean () {
-  docker rm --force $(docker ps -qa)
-  docker rmi --force $(docker images -qa)
-}
-
 # Find/replace
-
 gsub () {
   if [ "$1" = "--commit" ]; then
     find . -type f -name "*.bak" -delete

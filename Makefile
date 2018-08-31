@@ -7,6 +7,7 @@ install:
 	ln -sf $(realpath zshrc) $(HOME)/.zshrc
 	ln -sf $(realpath vimrc) $(HOME)/.vimrc
 	ln -sf $(realpath vimrc.bundles) $(HOME)/.vim/vimrc.bundles
+	ln -sf $(realpath gitconfig) $(HOME)/.gitconfig
 
 build:
 	docker build -t rzane/dotfiles .
