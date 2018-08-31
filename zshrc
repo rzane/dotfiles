@@ -49,6 +49,9 @@ alias vim=nvim
 alias cat=bat
 alias preview="fzf --preview 'bat --color \"always\" {}'"
 
+# Open fzf file with vscode
+export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(code {})+abort'"
+
 # Git
 alias gs='git status'
 

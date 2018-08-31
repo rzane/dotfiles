@@ -335,20 +335,20 @@ vnoremap <leader>ss "ky:Ag <C-R>k %<CR>
 let g:ale_completion_enabled = 1
 
 let g:ale_linters = {	
-\ 'javascript': ['prettier', 'eslint'],	
-\ 'ruby': ['ruby'],	
-\ 'typescript': ['prettier', 'tslint'],	
-\ 'eruby': [],
-\ 'elixir': [],	
-\ 'python': ['flake8'],	
-\}	
+    \ 'javascript': ['prettier', 'eslint'],	
+    \ 'ruby': ['ruby'],	
+    \ 'typescript': ['prettier', 'tslint', 'tsserver'],
+    \ 'eruby': [],
+    \ 'elixir': [],	
+    \ 'python': ['flake8'],	
+    \}	
 
 let g:ale_fixers = {	
-\ 'javascript': ['eslint'],	
-\ 'ruby': ['rubocop'],	
-\ 'typescript': ['tslint'],	
-\ 'elixir': ['mix_format'],	
-\}	
+    \ 'javascript': ['eslint'],	
+    \ 'ruby': ['rubocop'],	
+    \ 'typescript': ['tslint'],	
+    \ 'elixir': ['mix_format'],	
+    \}	
 
 let g:ale_sign_error = '✖'	
 let g:ale_sign_warning = '⚠'	
