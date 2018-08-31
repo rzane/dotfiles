@@ -29,4 +29,7 @@ Plug 'sheerun/vim-polyglot'
 " Color scheme
 Plug 'drewtempelmeyer/palenight.vim'
 
+" Linting
+Plug 'w0rp/ale'
+
 call plug#end()

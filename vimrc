@@ -333,6 +333,36 @@ vnoremap <leader>sp "ky:Ag <C-R>k<CR>
 " Search the current file for the visual selection
 vnoremap <leader>ss "ky:Ag <C-R>k %<CR>
 
+""""""""""""""""""""""
+" Linting
+""""""""""""""""""""""
+
+let g:ale_completion_enabled = 1
+
+let g:ale_linters = {	
+\ 'javascript': ['prettier', 'eslint'],	
+\ 'ruby': ['ruby'],	
+\ 'typescript': ['prettier', 'tslint'],	
+\ 'eruby': [],
+\ 'elixir': [],	
+\ 'python': ['flake8'],	
+\}	
+
+let g:ale_fixers = {	
+\ 'javascript': ['eslint'],	
+\ 'ruby': ['rubocop'],	
+\ 'typescript': ['tslint'],	
+\ 'elixir': ['mix_format'],	
+\}	
+
+let g:ale_sign_error = '✖'	
+let g:ale_sign_warning = '⚠'	
+
+highlight ALEErrorSign   guibg=NONE guifg=red ctermbg=NONE ctermfg=red	
+highlight ALEWarningSign guibg=NONE guifg=yellow ctermbg=NONE ctermfg=yellow	
+
+nnoremap <leader>af :ALEFix<CR>	
+
 
 """"""""""""""""""""""
 " Editing
