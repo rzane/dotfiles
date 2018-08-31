@@ -1,16 +1,14 @@
-" Mostly stolen from https://github.com/amix/vimrc
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""
 " Plugins
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""
 
 if filereadable(expand("~/.vim/vimrc.bundles"))
   source ~/.vim/vimrc.bundles
 end
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""
 " General
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""
 
 " Use UTF-8 encoding
 set encoding=UTF-8
@@ -35,9 +33,9 @@ let mapleader = " "
 " Fast saving
 nmap <leader>w :w!<cr>
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""
 " VIM user interface
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""
 
 " Set 7 lines to the cursor - when moving vertically using j/k
 set so=7
@@ -58,6 +56,9 @@ if has("win16") || has("win32")
 else
   set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
 endif
+
+" Show line numbers
+set number
 
 " Show the status bar
 set laststatus=2
@@ -97,9 +98,6 @@ if has("gui_macvim")
   autocmd GUIEnter * set vb t_vb=
 endif
 
-" Add a bit extra margin to the left
-set foldcolumn=1
-
 " Make the vsplit prettier
 set fillchars+=vert:│
 highlight VertSplit ctermbg=NONE guibg=NONE
@@ -109,9 +107,9 @@ let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""
 " Colors and Fonts
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""
 
 " Enable syntax highlighting
 syntax enable 
@@ -154,9 +152,9 @@ set encoding=utf8
 set ffs=unix,dos,mac
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""
 " Files
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""
 
 " Turn backup off, since most stuff is in SVN, git et.c anyway...
 set nobackup
@@ -168,9 +166,9 @@ nnoremap <leader>pf :Files<CR>
 nnoremap <leader>pt :NERDTreeToggle<CR>
 nnoremap <leader>p% :NERDTreeFind<CR>
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Text, tab and indent related
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""
+" Text
+""""""""""""""""""""""
 
 " Use spaces instead of tabs
 set expandtab
@@ -357,9 +355,9 @@ if has("autocmd")
 endif
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""
 " Misc
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""
 
 " Remove the Windows ^M - when the encodings gets messed up
 noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
@@ -374,9 +372,10 @@ map <leader>x :e ~/buffer.md<cr>
 map <leader>pp :setlocal paste!<cr>
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""
 " Helper functions
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""
+
 " Returns true if paste mode is enabled
 function! HasPaste()
   if &paste
@@ -426,3 +425,5 @@ function! VisualSelection(direction, extra_filter) range
   let @/ = l:pattern
   let @" = l:saved_reg
 endfunction
+
+" Thanks to https://github.com/amix/vimrc

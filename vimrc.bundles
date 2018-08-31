@@ -21,6 +21,7 @@ Plug 'junegunn/fzf.vim'
 
 " Text manipulation
 Plug 'tpope/vim-surround'
+Plug 'scrooloose/nerdcommenter'
 
 " Language support
 Plug 'sheerun/vim-polyglot'
