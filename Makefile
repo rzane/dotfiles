@@ -3,10 +3,10 @@ SHELL := /bin/bash
 .PHONY: install build dev
 
 install:
+	mkdir -p ~/.vim
 	ln -sf $(realpath zshrc) $(HOME)/.zshrc
-	ln -sf $(realpath vimrc.local) $(HOME)/.vimrc.local
-	ln -sf $(realpath vimrc.bundles.local) $(HOME)/.vimrc.bundles.local
-	bash < <(curl -Ls https://github.com/promptworks/promptworks.vim/raw/master/setup.sh)
+	ln -sf $(realpath vimrc) $(HOME)/.vimrc
+	ln -sf $(realpath vimrc.bundles) $(HOME)/.vim/vimrc.bundles
 
 build:
 	docker build -t rzane/dotfiles .
