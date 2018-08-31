@@ -31,5 +31,6 @@ Plug 'drewtempelmeyer/palenight.vim'
 
 " Linting
 Plug 'w0rp/ale'
+Plug 'maximbaz/lightline-ale'
 
 call plug#end()
