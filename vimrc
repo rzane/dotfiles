@@ -127,7 +127,11 @@ endif
 
 " Configure theme
 set background=dark
-colorscheme palenight
+
+try
+  colorscheme palenight
+catch
+endtry
 
 " Set extra options when running in GUI mode
 if has("gui_running")
