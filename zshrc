@@ -56,10 +56,10 @@ export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(code {})+abort'"
 alias gs='git status'
 
 grb () {
-  git checkout master
+  git checkout "${1-master}"
   git pull
   git checkout -
-  git rebase master
+  git rebase "${1-master}"
 }
 
 git-clean-branches () {
