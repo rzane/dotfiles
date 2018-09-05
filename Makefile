@@ -2,13 +2,19 @@ SHELL := /bin/bash
 
 .PHONY: install build dev
 
-install:
-	mkdir -p $(HOME)/.vim $(HOME)/.config/nvim
-	ln -sf $(realpath zshrc) $(HOME)/.zshrc
+install.vim:
+	mkdir -p $(HOME)/.config/nvim
+	ln -sf $(realpath vim) $(HOME)/.vim
 	ln -sf $(realpath vimrc) $(HOME)/.vimrc
-	ln -sf $(realpath vimrc.bundles) $(HOME)/.vim/vimrc.bundles
 	ln -sf $(realpath nvimrc) $(HOME)/.config/nvim/init.vim
+
+install.zsh:
+	ln -sf $(realpath zshrc) $(HOME)/.zshrc
+
+install.git:
 	ln -sf $(realpath gitconfig) $(HOME)/.gitconfig
+
+install: install.vim install.zsh install.git
 
 build:
 	docker build -t rzane/dotfiles .
