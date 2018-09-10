@@ -33,6 +33,15 @@ let mapleader = " "
 " Fast saving
 nmap <leader>w :w!<cr>
 
+" Remap capital letters to their lower, because I keep typing this
+command WQ wq
+command Wq wq
+command W w
+command Q q
+
+" Quickly run shell command
+nnoremap ! :call feedkeys(":! ")<CR>
+
 """""""""""""""""""""""
 " VIM user interface
 """""""""""""""""""""""
@@ -361,6 +370,7 @@ highlight ALEErrorSign   guibg=NONE guifg=red ctermbg=NONE ctermfg=red
 highlight ALEWarningSign guibg=NONE guifg=yellow ctermbg=NONE ctermfg=yellow	
 
 nnoremap <leader>af :ALEFix<CR>	
+nnoremap <leader>aj :%!python -m json.tool<CR>
 
 """"""""""""""""""""""
 " Status line
