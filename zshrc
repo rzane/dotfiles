@@ -56,7 +56,7 @@ alias gs='git status'
 
 grb () {
   git checkout "${1-master}"
-  git pull
+  git pull origin "${1-master}"
   git checkout -
   git rebase "${1-master}"
 }
