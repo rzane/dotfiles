@@ -45,7 +45,7 @@ test -s "$HOME/.asdf/completions/asdf.bash" && source "$HOME/.asdf/completions/a
 ########################
 
 alias vim=nvim
-alias cat=bat
+alias cat="bat --style plain"
 alias preview="fzf --preview 'bat --color \"always\" {}'"
 
 # Open fzf file with vscode
