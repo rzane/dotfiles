@@ -47,6 +47,11 @@ if command -v bat >/dev/null 2>&1; then
   alias cat="bat --style plain"
 fi
 
+if command -v exa >/dev/null 2>&1; then
+  alias ls="exa --git --header"
+  alias tree="exa --git --long --header --tree"
+fi
+
 ########################
 # Utilities
 ########################
