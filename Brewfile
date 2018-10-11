@@ -14,6 +14,7 @@ brew "fd"
 brew "asdf"
 brew "wget"
 brew "entr"
+brew "coreutils"
 
 cask "google-chrome"
 cask "docker"
