@@ -17,6 +17,7 @@ brew "entr"
 brew "coreutils"
 brew "exa"
 brew "hub"
+brew "jq"
 
 cask "google-chrome"
 cask "docker"
