@@ -1,9 +1,9 @@
-if [ ! -e ~/antigen.zsh  ]; then
+if [ ! -e ~/.antigen.zsh  ]; then
   echo "Installing antigen..."
-  curl -L git.io/antigen > ~/antigen.zsh
+  curl -L git.io/antigen > ~/.antigen.zsh
 fi
 
-source ~/antigen.zsh
+source ~/.antigen.zsh
 
 ########################
 # Packages
@@ -34,6 +34,8 @@ bindkey '^[[B' history-substring-search-down
 # Environment
 ########################
 
+export VISUAL=nvim
+
 # Set project paths for project jump
 PROJECT_PATHS=(~/Workspace)
 
@@ -41,11 +43,21 @@ test -s "$HOME/.asdf/asdf.sh" && source "$HOME/.asdf/asdf.sh"
 test -s "$HOME/.asdf/completions/asdf.bash" && source "$HOME/.asdf/completions/asdf.bash"
 
 ########################
-# Aliases
+# Shims
 ########################
 
-alias vim=nvim
-alias cat="bat --style plain"
+if command -v nvim >/dev/null 2>&1; then
+  alias vim=nvim
+fi
+
+if command -v bat >/dev/null 2>&1; then
+  alias cat="bat --style plain"
+fi
+
+########################
+# Utilities
+########################
+
 alias preview="fzf --preview 'bat --color \"always\" {}'"
 
 # Open fzf file with vscode
