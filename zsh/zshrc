@@ -13,7 +13,6 @@ antigen use oh-my-zsh
 antigen bundle asdf
 antigen bundle vi-mode
 antigen bundle web-search
-antigen bundle pj
 antigen bundle z
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-history-substring-search
@@ -35,11 +34,6 @@ bindkey '^[[B' history-substring-search-down
 ########################
 
 export VISUAL=nvim
-
-# Set project paths for project jump
-PROJECT_PATHS=(~/Workspace)
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 ########################
 # Shims

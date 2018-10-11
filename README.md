@@ -28,7 +28,7 @@ If you're on a mac, you can start using ZSH like this:
     $ which zsh | sudo tee -a /etc/shells
     $ chsh -s $(which zsh)
 
-# ASDF
+### ASDF
 
 ASDF is an all-in-one version manager, and it's great.
 
