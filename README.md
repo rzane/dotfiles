@@ -30,21 +30,14 @@ If you're on a mac, you can start using ZSH like this:
 
 ### ASDF
 
-ASDF is an all-in-one version manager, and it's great.
+ASDF is an all-in-one version manager, and it's great. I have a convenience script for installing the latest Node.js, Ruby, Python, and Elixir.
 
-    $ brew install asdf
-    $ asdf plugin-add ruby
-    $ asdf plugin-add python
-    $ asdf plugin-add elixir
-    $ asdf plugin-add nodejs
+    $ bash scripts/stackup.sh
 
-For Node.js, you'll also need to run:
+After it finishes, you'll need to boot ASDF in your dotfiles:
 
-    $ bash /usr/local/opt/asdf/plugins/nodejs/bin/import-release-team-keyring
-
-Now, you can list available versions:
-
-    $ asdf list-all <language>
+    $ echo -e '\n. $HOME/.asdf/asdf.sh' >> ~/.bash_profile
+    $ echo -e '\n. $HOME/.asdf/completions/asdf.bash' >> ~/.bash_profile
 
 To install a version:
 
