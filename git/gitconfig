@@ -22,3 +22,5 @@
   untracked = cyan
 [include]
   path = .gitconfig.local
+[credential]
+  helper = osxkeychain
