@@ -120,6 +120,28 @@ function gsub {
 }
 
 ########################
+# Services
+########################
+
+function service-up {
+  if ! docker ps -a | awk '{print $NF}' | grep -q "^${1}$"; then
+    docker create --name "$@"
+  fi
+  docker start "$1"
+}
+
+function service-down {
+  docker stop "$1"
+  docker rm "$1" --force
+}
+
+alias postgres-up='service-up postgres -p 5432:5432 postgres:alpine'
+alias postgres-down='service-down postgres'
+
+alias redis-up='service-up redis -p 6379:6379 redis:alpine'
+alias redis-down='serivice-down redis'
+
+########################
 # Customization
 ########################
 
