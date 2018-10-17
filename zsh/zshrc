@@ -33,54 +33,83 @@ bindkey '^[[B' history-substring-search-down
 # Environment
 ########################
 
-export VISUAL=nvim
+if [ $commands[nvim] ]; then
+  export VISUAL=nvim
+else
+  export VISUAL=vim
+fi
 
 ########################
 # Shims
 ########################
 
-if command -v nvim >/dev/null 2>&1; then
+if [ $commands[nvim] ]; then
   alias vim=nvim
 fi
 
-if command -v bat >/dev/null 2>&1; then
+if [ $commands[bat] ]; then
   alias cat="bat --style plain"
 fi
 
-if command -v exa >/dev/null 2>&1; then
+if [ $commands[exa] ]; then
   alias ls="exa --git --header"
   alias tree="exa --git --long --header --tree"
 fi
 
 ########################
-# Utilities
+# Completion
 ########################
 
+if [ $commands[kubectl] ]; then
+  source <(kubectl completion zsh)
+fi
+
+########################
+# FZF
+########################
+
+# Press ctrl-o in fzf to open a file in VIM
+export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(vim {})+abort'"
+
+# Search and preview files
 alias preview="fzf --preview 'bat --color \"always\" {}'"
 
-# Open fzf file with vscode
-export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(code {})+abort'"
-
+########################
 # Git
+########################
+
 alias gs='git status'
 
-grb () {
+function grb {
   git checkout "${1-master}"
   git pull origin "${1-master}"
   git checkout -
   git rebase "${1-master}"
 }
 
-git-clean-branches () {
+function git-86 {
   git branch --merged master | egrep -v "(^\*|master)" | xargs git branch -d
 }
 
+########################
 # Docker
+########################
+
 alias d='docker-compose'
 alias dr='docker-compose run'
 
-# Find/replace
-gsub () {
+########################
+# Ruby
+########################
+
+alias bi='bundle install'
+alias be='bundle exec'
+
+########################
+# Utilities
+########################
+
+function gsub {
   if [ "$1" = "--commit" ]; then
     find . -type f -name "*.bak" -delete
   elif [ "$1" = "--revert" ]; then
