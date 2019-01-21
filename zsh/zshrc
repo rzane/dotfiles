@@ -22,12 +22,15 @@ antigen bundle sindresorhus/pure
 antigen apply
 
 ########################
-# Keybindings
+# History search
 ########################
 
-# zsh-history-substring-search configuration
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
+bindkey -M vicmd "k" history-substring-search-up
+bindkey -M vicmd "j" history-substring-search-down
+bindkey -M viins "$terminfo[kcuu1]" history-substring-search-up
+bindkey -M viins "$terminfo[kcud1]" history-substring-search-down
 
 ########################
 # Environment
