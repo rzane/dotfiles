@@ -112,6 +112,10 @@ alias be='bundle exec'
 # Utilities
 ########################
 
+# What's the weather?
+alias weather='curl wttr.in/philly'
+
+# Find/replace all files in current directory
 function gsub {
   if [ "$1" = "--commit" ]; then
     find . -type f -name "*.bak" -delete
