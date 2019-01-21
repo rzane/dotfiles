@@ -87,11 +87,18 @@ alias preview="fzf --preview 'bat --color \"always\" {}'"
 ########################
 
 alias gs='git status'
+alias gd='git diff'
+alias gdc='git diff --cached'
+alias ga='git add'
+alias gap='git add -p'
+alias gc='git commit'
+alias gcm='git commit -m'
+alias gca='git commit --amend --no-edit'
+alias gcam='git commit --amend -m'
+alias gp='git push'
 
 function grb {
-  git checkout "${1-master}"
-  git pull origin "${1-master}"
-  git checkout -
+  hub sync
   git rebase "${1-master}"
 }
 
