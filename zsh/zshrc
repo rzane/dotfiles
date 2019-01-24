@@ -93,8 +93,10 @@ alias ga='git add'
 alias gap='git add -p'
 alias gc='git commit'
 alias gcm='git commit -m'
-alias gca='git commit --amend --no-edit'
+alias gco='git checkout'
+alias gca='git commit --amend'
 alias gcam='git commit --amend -m'
+alias gcan='git commit --amend --no-edit'
 alias gp='git push'
 
 function grb {
