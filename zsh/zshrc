@@ -98,15 +98,8 @@ alias gca='git commit --amend'
 alias gcam='git commit --amend -m'
 alias gcan='git commit --amend --no-edit'
 alias gp='git push'
-
-function grb {
-  hub sync
-  git rebase "${1-master}"
-}
-
-function git-86 {
-  git branch --merged master | egrep -v "(^\*|master)" | xargs git branch -d
-}
+alias grb='hub sync && git rebase'
+alias g86='git branch --merged master | egrep -v "(^\*|master)" | xargs git branch -d'
 
 ########################
 # Docker
