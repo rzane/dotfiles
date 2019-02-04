@@ -163,7 +163,7 @@ alias postgres-up='service-up postgres -p 5432:5432 postgres:alpine'
 alias postgres-down='service-down postgres'
 
 alias redis-up='service-up redis -p 6379:6379 redis:alpine'
-alias redis-down='serivice-down redis'
+alias redis-down='service-down redis'
 
 ########################
 # Customization
