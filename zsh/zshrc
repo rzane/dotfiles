@@ -119,6 +119,13 @@ alias bi='bundle install'
 alias be='bundle exec'
 
 ########################
+# Node
+########################
+
+alias y='yarn'
+alias yt='yarn test'
+
+########################
 # Utilities
 ########################
 
