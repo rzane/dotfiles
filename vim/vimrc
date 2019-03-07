@@ -375,6 +375,7 @@ highlight ALEWarningSign ctermfg=180 guifg=#ffcb6b guibg=NONE ctermbg=NONE
 nnoremap <leader>af :ALEFix<CR>	
 nnoremap <leader>ad :ALEGoToDefinitionInVSplit<CR>
 nnoremap <leader>ar :ALEFindReferences -relative<CR>
+nnoremap <leader>ah :ALEHover<CR>
 nnoremap <leader>aj :%!python -m json.tool<CR>
 
 """"""""""""""""""""""
