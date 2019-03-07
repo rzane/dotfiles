@@ -350,7 +350,7 @@ let g:ale_completion_enabled = 1
 let g:ale_linters = {	
     \ 'javascript': ['prettier', 'eslint'],
     \ 'ruby': ['ruby'],
-    \ 'typescript': ['prettier', 'tslint', 'tsserver'],
+    \ 'typescript': ['prettier', 'tslint', 'eslint', 'tsserver'],
     \ 'eruby': [],
     \ 'elixir': [],
     \ 'python': ['flake8'],
@@ -359,7 +359,7 @@ let g:ale_linters = {
 let g:ale_fixers = {	
     \ 'javascript': ['prettier', 'eslint'],
     \ 'ruby': ['rubocop'],
-    \ 'typescript': ['prettier', 'tslint'],
+    \ 'typescript': ['prettier', 'tslint', 'eslint'],
     \ 'elixir': ['mix_format'],
     \}	
 
