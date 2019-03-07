@@ -346,6 +346,12 @@ vnoremap <leader>ss "ky:Ag <C-R>k %<CR>
 """"""""""""""""""""""
 
 let g:ale_completion_enabled = 1
+let g:ale_completion_max_suggestions = 10
+let g:ale_completion_delay = 400
+
+let g:ale_sign_error = '✕'
+let g:ale_sign_warning = '⚠'
+let g:ale_sign_column_always = 1
 
 let g:ale_linters = {	
     \ 'javascript': ['prettier', 'eslint'],
@@ -363,11 +369,8 @@ let g:ale_fixers = {
     \ 'elixir': ['mix_format'],
     \}	
 
-let g:ale_sign_error = '✖'	
-let g:ale_sign_warning = '⚠'	
-
-highlight ALEErrorSign   guibg=NONE guifg=red ctermbg=NONE ctermfg=red	
-highlight ALEWarningSign guibg=NONE guifg=yellow ctermbg=NONE ctermfg=yellow	
+highlight ALEErrorSign ctermfg=204 guifg=#ff5370 guibg=NONE ctermbg=NONE
+highlight ALEWarningSign ctermfg=180 guifg=#ffcb6b guibg=NONE ctermbg=NONE
 
 nnoremap <leader>af :ALEFix<CR>	
 nnoremap <leader>aj :%!python -m json.tool<CR>
