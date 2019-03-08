@@ -28,6 +28,6 @@ git:
 
 .PHONY: vscode
 vscode:
-	@while read -r ext; do code --install-extension "$$ext"; done < vscode/extensions.txt
 	ln -sf $(realpath vscode/settings.json) $(VSCODE)/settings.json
 	ln -sf $(realpath vscode/keybindings.json) $(VSCODE)/keybindings.json
+	ln -sf $(realpath vscode/extensions.json) $(VSCODE)/extensions.json

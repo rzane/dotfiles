@@ -1,5 +1,5 @@
 {
-  "editor.fontSize": 20,
+  "editor.fontSize": 24,
   "editor.tabSize": 2,
   "editor.minimap.enabled": false,
   "editor.fontFamily": "Dank Mono",
@@ -9,12 +9,26 @@
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
   "workbench.editor.enablePreview": false,
-  "python.pythonPath": "python3",
+  "workbench.settings.editor": "json",
+  "workbench.colorTheme": "Palenight Theme",
+  "workbench.activityBar.visible": false,
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.list.keyboardNavigation": "simple",
   "vim.leader": "<space>",
   "vim.useSystemClipboard": true,
-  "window.zoomLevel": 0,
-  "workbench.startupEditor": "newUntitledFile",
   "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<leader>", "p", "t"],
+      "commands": ["workbench.view.explorer"]
+    },
+    {
+      "before": ["<leader>", "p", "f"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    {
+      "before": ["<leader>", "p", "s"],
+      "commands": ["workbench.action.showAllSymbols"]
+    },
     {
       "before": ["<leader>", "w", "-"],
       "commands": ["workbench.action.splitEditorDown"]
@@ -42,8 +56,14 @@
     {
       "before": ["<leader>", "w", "k"],
       "commands": ["workbench.action.focusAboveGroup"]
+    },
+    {
+      "before": ["<leader>", "e", "j"],
+      "commands": ["editor.action.marker.next"]
+    },
+    {
+      "before": ["<leader>", "e", "k"],
+      "commands": ["editor.action.marker.prev"]
     }
-  ],
-  "workbench.colorTheme": "Palenight Theme",
-  "editor.formatOnSave": true
+  ]
 }
