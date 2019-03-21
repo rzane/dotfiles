@@ -18,18 +18,6 @@
   "vim.useSystemClipboard": true,
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": ["<leader>", "p", "t"],
-      "commands": ["workbench.view.explorer"]
-    },
-    {
-      "before": ["<leader>", "p", "f"],
-      "commands": ["workbench.action.quickOpen"]
-    },
-    {
-      "before": ["<leader>", "p", "s"],
-      "commands": ["workbench.action.showAllSymbols"]
-    },
-    {
       "before": ["<leader>", "w", "-"],
       "commands": ["workbench.action.splitEditorDown"]
     },
