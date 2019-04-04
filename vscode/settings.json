@@ -11,9 +11,10 @@
   "workbench.editor.enablePreview": false,
   "workbench.settings.editor": "json",
   "workbench.colorTheme": "Palenight Theme",
-  "workbench.activityBar.visible": false,
   "workbench.startupEditor": "newUntitledFile",
   "workbench.list.keyboardNavigation": "simple",
+  "workbench.statusBar.visible": false,
+  "workbench.activityBar.visible": false,
   "vim.leader": "<space>",
   "vim.useSystemClipboard": true,
   "vim.normalModeKeyBindingsNonRecursive": [

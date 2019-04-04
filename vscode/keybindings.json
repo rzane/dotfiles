@@ -39,5 +39,10 @@
     "key": "cmd+n",
     "command": "explorer.newFile",
     "when": "explorerViewletFocus"
+  },
+  {
+    "key": "cmd+s",
+    "command": "explorer.openToSide",
+    "when": "explorerViewletFocus"
   }
 ]
