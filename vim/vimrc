@@ -357,6 +357,7 @@ let g:ale_linters = {
     \ 'javascript': ['prettier', 'eslint'],
     \ 'ruby': ['ruby'],
     \ 'typescript': ['prettier', 'tslint', 'eslint', 'tsserver'],
+    \ 'vue': ['prettier'],
     \ 'eruby': [],
     \ 'elixir': [],
     \ 'python': ['flake8'],
