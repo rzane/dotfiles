@@ -103,8 +103,11 @@ alias gcam='git commit --amend -m'
 alias gcan='git commit --amend --no-edit'
 alias gp='git push'
 alias grb='hub sync && git rebase'
-alias g86='git branch --merged master | egrep -v "(^\*|master)" | xargs git branch -d'
 alias gbl="git for-each-ref --sort=committerdate refs/heads/ --format='%(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"
+
+function g86 {
+  git branch --merged "${1:-master}" | egrep -v "(^\*|${1:-master})" | xargs git branch -d
+}
 
 ########################
 # Docker
