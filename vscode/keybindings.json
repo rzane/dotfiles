@@ -44,5 +44,9 @@
     "key": "cmd+s",
     "command": "explorer.openToSide",
     "when": "explorerViewletFocus"
+  },
+  {
+    "key": "cmd+g",
+    "command": "workbench.view.scm"
   }
 ]

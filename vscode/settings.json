@@ -1,22 +1,36 @@
 {
-  "editor.fontSize": 24,
-  "editor.tabSize": 2,
-  "editor.minimap.enabled": false,
+  "breadcrumbs.enabled": false,
+  "editor.folding": false,
   "editor.fontFamily": "Dank Mono",
   "editor.fontLigatures": true,
+  "editor.fontSize": 22,
+  "editor.glyphMargin": false,
+  "editor.hideCursorInOverviewRuler": true,
+  "editor.lineHeight": 30,
+  "editor.lineNumbers": "off",
+  "editor.matchBrackets": false,
+  "editor.minimap.enabled": false,
+  "editor.occurrencesHighlight": false,
+  "editor.overviewRulerBorder": false,
+  "editor.renderIndentGuides": false,
+  "editor.renderLineHighlight": "none",
   "editor.rulers": [80],
-  "files.trimTrailingWhitespace": true,
+  "editor.tabSize": 2,
+  "explorer.openEditors.visible": 0,
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
-  "workbench.editor.enablePreview": false,
-  "workbench.settings.editor": "json",
-  "workbench.colorTheme": "Palenight Theme",
-  "workbench.startupEditor": "newUntitledFile",
-  "workbench.list.keyboardNavigation": "simple",
-  "workbench.statusBar.visible": false,
-  "workbench.activityBar.visible": false,
+  "files.trimTrailingWhitespace": true,
   "vim.leader": "<space>",
   "vim.useSystemClipboard": true,
+  "window.zoomLevel": 0,
+  "workbench.activityBar.visible": false,
+  "workbench.colorTheme": "Palenight Italic",
+  "workbench.editor.enablePreview": false,
+  "workbench.iconTheme": null,
+  "workbench.list.keyboardNavigation": "simple",
+  "workbench.settings.editor": "json",
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.statusBar.visible": false,
   "vim.normalModeKeyBindingsNonRecursive": [
     {
       "before": ["<leader>", "w", "-"],
@@ -53,6 +67,22 @@
     {
       "before": ["<leader>", "e", "k"],
       "commands": ["editor.action.marker.prev"]
+    },
+    {
+      "before": ["<leader>", "z", "z"],
+      "commands": ["workbench.action.toggleZenMode"]
     }
-  ]
+  ],
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
