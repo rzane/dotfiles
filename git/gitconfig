@@ -24,3 +24,6 @@
   path = .gitconfig.local
 [credential]
   helper = osxkeychain
+[user]
+	name = Ray Zane
+	email = raymondzane@gmail.com

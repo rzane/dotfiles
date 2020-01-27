@@ -1,6 +1,6 @@
 # vi:set ft=ruby
 
-tap "caskroom/cask"
+tap "homebrew/cask"
 
 brew "nvim"
 brew "ag"
@@ -17,6 +17,7 @@ brew "coreutils"
 brew "exa"
 brew "hub"
 brew "jq"
+brew "gnupg"
 
 cask "google-chrome"
 cask "docker"

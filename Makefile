@@ -30,4 +30,4 @@ git:
 vscode:
 	ln -sf $(realpath vscode/settings.json) $(VSCODE)/settings.json
 	ln -sf $(realpath vscode/keybindings.json) $(VSCODE)/keybindings.json
-	ln -sf $(realpath vscode/extensions.json) $(VSCODE)/extensions.json
+	cat vscode/extensions.txt | xargs printf -- '--install-extension %s\n' | xargs code
