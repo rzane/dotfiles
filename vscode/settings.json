@@ -1,5 +1,6 @@
 {
   "breadcrumbs.enabled": false,
+  "editor.formatOnSave": true,
   "editor.folding": false,
   "editor.fontFamily": "Dank Mono",
   "editor.fontLigatures": true,
@@ -73,16 +74,23 @@
       "commands": ["workbench.action.toggleZenMode"]
     }
   ],
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[vue]": {
+  "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[python]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 4
   }
 }
