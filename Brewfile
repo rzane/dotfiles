@@ -18,6 +18,7 @@ brew "exa"
 brew "hub"
 brew "jq"
 brew "gnupg"
+brew "erlang"
 
 cask "google-chrome"
 cask "docker"
