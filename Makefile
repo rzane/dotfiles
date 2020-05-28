@@ -28,6 +28,7 @@ git:
 
 .PHONY: vscode
 vscode:
+	mkdir -p $(VSCODE)
 	ln -sf $(realpath vscode/settings.json) $(VSCODE)/settings.json
 	ln -sf $(realpath vscode/keybindings.json) $(VSCODE)/keybindings.json
 	cat vscode/extensions.txt | xargs printf -- '--install-extension %s\n' | xargs code
