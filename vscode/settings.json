@@ -16,6 +16,8 @@
   "editor.renderLineHighlight": "none",
   "editor.rulers": [80],
   "editor.tabSize": 2,
+  "elixirLS.fetchDeps": false,
+  "elixirLS.suggestSpecs": false,
   "explorer.openEditors.visible": 0,
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
