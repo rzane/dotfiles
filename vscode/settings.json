@@ -22,7 +22,6 @@
   "files.trimTrailingWhitespace": true,
   "vim.leader": "<space>",
   "vim.useSystemClipboard": true,
-  "window.zoomLevel": 0,
   "workbench.activityBar.visible": false,
   "workbench.colorTheme": "Palenight Italic",
   "workbench.editor.enablePreview": false,
