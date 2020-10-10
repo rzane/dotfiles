@@ -1,10 +1,10 @@
 {
   "breadcrumbs.enabled": false,
-  "editor.formatOnSave": true,
   "editor.folding": false,
   "editor.fontFamily": "Dank Mono",
   "editor.fontLigatures": true,
   "editor.fontSize": 22,
+  "editor.formatOnSave": true,
   "editor.glyphMargin": false,
   "editor.hideCursorInOverviewRuler": true,
   "editor.lineHeight": 30,
