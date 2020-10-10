@@ -14,9 +14,7 @@
   "editor.overviewRulerBorder": false,
   "editor.renderIndentGuides": false,
   "editor.renderLineHighlight": "none",
-  "editor.rulers": [
-    80
-  ],
+  "editor.rulers": [80],
   "editor.tabSize": 2,
   "explorer.openEditors.visible": 0,
   "files.insertFinalNewline": true,
@@ -35,104 +33,44 @@
   "workbench.statusBar.visible": false,
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": [
-        "<leader>",
-        "w",
-        "-"
-      ],
-      "commands": [
-        "workbench.action.splitEditorDown"
-      ]
+      "before": ["<leader>", "w", "-"],
+      "commands": ["workbench.action.splitEditorDown"]
     },
     {
-      "before": [
-        "<leader>",
-        "w",
-        "/"
-      ],
-      "commands": [
-        "workbench.action.splitEditorRight"
-      ]
+      "before": ["<leader>", "w", "/"],
+      "commands": ["workbench.action.splitEditorRight"]
     },
     {
-      "before": [
-        "<leader>",
-        "w",
-        "d"
-      ],
-      "commands": [
-        "workbench.action.closeActiveEditor"
-      ]
+      "before": ["<leader>", "w", "d"],
+      "commands": ["workbench.action.closeActiveEditor"]
     },
     {
-      "before": [
-        "<leader>",
-        "w",
-        "l"
-      ],
-      "commands": [
-        "workbench.action.focusRightGroup"
-      ]
+      "before": ["<leader>", "w", "l"],
+      "commands": ["workbench.action.focusRightGroup"]
     },
     {
-      "before": [
-        "<leader>",
-        "w",
-        "h"
-      ],
-      "commands": [
-        "workbench.action.focusLeftGroup"
-      ]
+      "before": ["<leader>", "w", "h"],
+      "commands": ["workbench.action.focusLeftGroup"]
     },
     {
-      "before": [
-        "<leader>",
-        "w",
-        "j"
-      ],
-      "commands": [
-        "workbench.action.focusBelowGroup"
-      ]
+      "before": ["<leader>", "w", "j"],
+      "commands": ["workbench.action.focusBelowGroup"]
     },
     {
-      "before": [
-        "<leader>",
-        "w",
-        "k"
-      ],
-      "commands": [
-        "workbench.action.focusAboveGroup"
-      ]
+      "before": ["<leader>", "w", "k"],
+      "commands": ["workbench.action.focusAboveGroup"]
     },
     {
-      "before": [
-        "<leader>",
-        "e",
-        "j"
-      ],
-      "commands": [
-        "editor.action.marker.next"
-      ]
+      "before": ["<leader>", "e", "j"],
+      "commands": ["editor.action.marker.next"]
     },
     {
-      "before": [
-        "<leader>",
-        "e",
-        "k"
-      ],
-      "commands": [
-        "editor.action.marker.prev"
-      ]
+      "before": ["<leader>", "e", "k"],
+      "commands": ["editor.action.marker.prev"]
     },
     {
-      "before": [
-        "<leader>",
-        "z",
-        "z"
-      ],
-      "commands": [
-        "workbench.action.toggleZenMode"
-      ]
+      "before": ["<leader>", "z", "z"],
+      "commands": ["workbench.action.toggleZenMode"]
     }
   ],
   "[json]": {
