@@ -3,7 +3,7 @@
 tap "homebrew/cask"
 
 brew "nvim"
-brew "ag"
+brew "ripgrep"
 brew "zsh"
 brew "rename"
 brew "bat"

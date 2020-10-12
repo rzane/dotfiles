@@ -142,13 +142,7 @@ alias weather='curl wttr.in/philly'
 
 # Find/replace all files in current directory
 function gsub {
-  if [ "$1" = "--commit" ]; then
-    find "${2:-.}" -type f -name "*.bak" -delete
-  elif [ "$1" = "--revert" ]; then
-    find "${2:-.}" -type f -name "*.bak" -exec rename -f 's/\.bak$//' {} \;
-  else
-    ag -0 -l "$1" "${@:3}" | xargs -0 perl -pi.bak -e "s/$1/$2/g"
-  fi
+  rg -0 -l "$1" "${@:3}" | xargs -0 perl -pi -e "s/$1/$2/g"
 }
 
 ########################
