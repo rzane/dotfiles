@@ -316,8 +316,10 @@ set hlsearch
 " Makes search act like search in modern browsers
 set incsearch 
 
-" Use ag instead of ack
-if executable('ag')
+" Use rg/ag instead of ack
+if executable('rg')
+  let g:ackprg = 'rg --vimgrep'
+elseif executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
 
@@ -327,7 +329,7 @@ map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 
 " Project with search
-nnoremap <leader>sp :Ag<space>
+nnoremap <leader>sp :Ack<space>
 
 " Search current file
 nnoremap <leader>ss :BLines<space>
@@ -336,10 +338,10 @@ nnoremap <leader>ss :BLines<space>
 nnoremap <leader>sc :noh<CR>
 
 " Search the project for the visual selection
-vnoremap <leader>sp "ky:Ag <C-R>k<CR>
+vnoremap <leader>sp "ky:Ack <C-R>k<CR>
 
 " Search the current file for the visual selection
-vnoremap <leader>ss "ky:Ag <C-R>k %<CR>
+vnoremap <leader>ss "ky:Ack <C-R>k %<CR>
 
 """"""""""""""""""""""
 " Linting

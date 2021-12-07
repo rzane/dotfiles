@@ -10,6 +10,7 @@ call plug#begin('~/.vim/plugged')
 
 " Search
 Plug 'haya14busa/incsearch.vim'
+Plug 'mileszs/ack.vim'
 
 " Interface
 Plug 'itchyny/lightline.vim'
