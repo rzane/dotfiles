@@ -102,7 +102,7 @@ alias gca='git commit --amend'
 alias gcam='git commit --amend -m'
 alias gcan='git commit --amend --no-edit'
 alias gp='git push'
-alias grb='hub sync && git rebase'
+alias grb='HUB_VERBOSE=1 hub sync && git rebase'
 alias gbl="git for-each-ref --sort=committerdate refs/heads/ --format='%(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"
 
 function g86 {
@@ -132,6 +132,19 @@ alias yt='yarn test'
 alias yl='yarn lint'
 alias ys='yarn start'
 alias yf='yarn format'
+
+########################
+# Python
+########################
+
+alias p='poetry'
+alias pr='poetry run'
+
+########################
+# Elixir
+########################
+
+export ERL_AFLAGS="-kernel shell_history enabled"
 
 ########################
 # Utilities
