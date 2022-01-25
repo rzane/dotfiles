@@ -151,7 +151,7 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 ########################
 
 # What's the weather?
-alias weather='curl wttr.in/philly'
+alias weather='curl wttr.in'
 
 # Find/replace all files in current directory
 function gsub {
