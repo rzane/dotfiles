@@ -1,5 +1,6 @@
 {
   "breadcrumbs.enabled": false,
+  "editor.cursorStyle": "line",
   "editor.folding": false,
   "editor.fontFamily": "Dank Mono",
   "editor.fontLigatures": true,
@@ -7,31 +8,36 @@
   "editor.formatOnSave": true,
   "editor.glyphMargin": false,
   "editor.hideCursorInOverviewRuler": true,
+  "editor.insertSpaces": true,
   "editor.lineHeight": 30,
   "editor.lineNumbers": "on",
   "editor.minimap.enabled": false,
   "editor.occurrencesHighlight": false,
   "editor.overviewRulerBorder": false,
-  "editor.renderIndentGuides": false,
   "editor.renderLineHighlight": "none",
   "editor.rulers": [80],
   "editor.tabSize": 2,
+  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+  "editor.wordWrap": "off",
   "elixirLS.fetchDeps": false,
   "elixirLS.suggestSpecs": false,
   "explorer.openEditors.visible": 0,
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
+  "redhat.telemetry.enabled": false,
+  "telemetry.telemetryLevel": "off",
   "vim.leader": "<space>",
   "vim.useSystemClipboard": true,
-  "workbench.activityBar.visible": false,
-  "workbench.colorTheme": "Palenight Italic",
+  "workbench.activityBar.visible": true,
+  "workbench.colorTheme": "Palenight (Mild Contrast)",
   "workbench.editor.enablePreview": false,
+  "workbench.editor.untitled.hint": "hidden",
   "workbench.iconTheme": null,
   "workbench.list.keyboardNavigation": "simple",
   "workbench.settings.editor": "json",
   "workbench.startupEditor": "newUntitledFile",
-  "workbench.statusBar.visible": false,
+  "workbench.statusBar.visible": true,
   "vim.normalModeKeyBindingsNonRecursive": [
     {
       "before": ["<leader>", "w", "-"],
@@ -74,7 +80,26 @@
       "commands": ["workbench.action.toggleZenMode"]
     }
   ],
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[python]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 4
+  },
+  "[elixir]": {
+    "editor.defaultFormatter": "JakeBecker.elixir-ls"
+  },
+  "[javascriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[javascript]": {
@@ -85,12 +110,5 @@
   },
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[vue]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[python]": {
-    "editor.insertSpaces": true,
-    "editor.tabSize": 4
   }
 }
