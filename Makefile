@@ -8,7 +8,7 @@ else
 endif
 
 .PHONY: install
-install: vim zsh git vscode
+install: vim zsh git vscode kitty
 
 .PHONY: vim
 vim:
@@ -32,3 +32,7 @@ vscode:
 	ln -sf $(realpath vscode/settings.json) $(VSCODE)/settings.json
 	ln -sf $(realpath vscode/keybindings.json) $(VSCODE)/keybindings.json
 	cat vscode/extensions.txt | xargs printf -- '--install-extension %s\n' | xargs code
+
+.PHONY: kitty
+kitty:
+	ln -sf $(realpath kitty/kitty.conf) $(HOME)/.config/kitty/kitty.conf
