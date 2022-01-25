@@ -18,23 +18,20 @@ znap source zsh-users/zsh-syntax-highlighting
 znap source zsh-users/zsh-history-substring-search
 znap source rupa/z
 znap source ohmyzsh/ohmyzsh plugins/asdf
+znap source ohmyzsh/ohmyzsh plugins/vi-mode
 
 ########################
-# VIM mode
+# Keybindings
 ########################
 
-bindkey -v
+# Show the cursor in insert mode
+VI_MODE_SET_CURSOR=true
 
-########################
-# History search
-########################
-
+# Enable history substring searching
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
-bindkey -M vicmd "k" history-substring-search-up
-bindkey -M vicmd "j" history-substring-search-down
-bindkey -M viins "$terminfo[kcuu1]" history-substring-search-up
-bindkey -M viins "$terminfo[kcud1]" history-substring-search-down
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
 
 ########################
 # Environment
