@@ -35,4 +35,5 @@ vscode:
 
 .PHONY: kitty
 kitty:
+	mkdir -p $(HOME)/.config/kitty
 	ln -sf $(realpath kitty/kitty.conf) $(HOME)/.config/kitty/kitty.conf
