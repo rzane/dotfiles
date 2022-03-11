@@ -43,10 +43,6 @@ else
   export VISUAL=vim
 fi
 
-if [ $commands[moar] ]; then
-  export PAGER=moar
-fi
-
 if [ $commands[direnv] ]; then
   eval "$(direnv hook zsh)"
 fi
