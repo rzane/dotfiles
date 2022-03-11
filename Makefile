@@ -37,3 +37,4 @@ vscode:
 kitty:
 	mkdir -p $(HOME)/.config/kitty
 	ln -sf $(realpath kitty/kitty.conf) $(HOME)/.config/kitty/kitty.conf
+	ln -sf $(realpath kitty/open-actions.conf) $(HOME)/.config/kitty/open-actions.conf
