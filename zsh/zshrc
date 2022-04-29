@@ -65,12 +65,6 @@ if [ $commands[exa] ]; then
 fi
 
 ########################
-# Completion
-########################
-
-znap fpath _kubectl 'kubectl completion zsh'
-
-########################
 # Fuzzy Find
 ########################
 
