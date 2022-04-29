@@ -22,7 +22,7 @@ brew "erlang"
 
 cask "google-chrome"
 cask "docker"
-cask "iterm2"
+cask "kitty"
 cask "vlc"
 cask "visual-studio-code"
 cask "slack"
