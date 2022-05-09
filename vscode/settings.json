@@ -25,6 +25,7 @@
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
+  "search.followSymlinks": false,
   "redhat.telemetry.enabled": false,
   "telemetry.telemetryLevel": "off",
   "vim.leader": "<space>",
