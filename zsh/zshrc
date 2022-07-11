@@ -37,6 +37,8 @@ bindkey -M vicmd 'j' history-substring-search-down
 # Environment
 ########################
 
+export BAT_THEME=base16
+
 if [ $commands[nvim] ]; then
   export VISUAL=nvim
 else

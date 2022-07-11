@@ -19,6 +19,7 @@ brew "gh"
 brew "jq"
 brew "gnupg"
 brew "erlang"
+brew "delta"
 
 cask "google-chrome"
 cask "docker"
