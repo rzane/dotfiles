@@ -1,5 +1,6 @@
 {
   "breadcrumbs.enabled": false,
+  "editor.bracketPairColorization.enabled": false,
   "editor.cursorStyle": "line",
   "editor.folding": true,
   "editor.fontFamily": "Dank Mono",
