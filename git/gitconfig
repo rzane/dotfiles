@@ -20,10 +20,19 @@
   added = green
   changed = yellow
   untracked = cyan
-[include]
-  path = .gitconfig.local
-[credential]
-  helper = osxkeychain
-[user]
-	name = Ray Zane
-	email = raymondzane@gmail.com
+
+# See: https://github.com/dandavison/delta
+[core]
+  pager = delta
+[interactive]
+  diffFilter = delta --color-only
+[add.interactive]
+  useBuiltin = false
+[delta]
+  navigate = true
+  light = false
+  hunk-header-style = raw
+[merge]
+  conflictstyle = diff3
+[diff]
+  colorMoved = default
