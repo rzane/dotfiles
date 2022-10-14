@@ -24,7 +24,7 @@ zsh:
 
 .PHONY: git
 git:
-	git config include.path $(realpath git/gitconfig)
+	git config --global include.path $(realpath git/gitconfig)
 
 .PHONY: vscode
 vscode:
