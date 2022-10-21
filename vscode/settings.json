@@ -9,6 +9,7 @@
   "editor.formatOnSave": true,
   "editor.glyphMargin": false,
   "editor.hideCursorInOverviewRuler": true,
+  "editor.inlineSuggest.enabled": true,
   "editor.insertSpaces": true,
   "editor.lineHeight": 30,
   "editor.lineNumbers": "on",
@@ -16,7 +17,7 @@
   "editor.occurrencesHighlight": false,
   "editor.overviewRulerBorder": false,
   "editor.renderLineHighlight": "none",
-  "editor.rulers": [80],
+  "editor.rulers": [120],
   "editor.tabSize": 2,
   "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
   "editor.wordWrap": "off",
@@ -26,8 +27,12 @@
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
-  "search.followSymlinks": false,
+  "gitlens.codeLens.enabled": false,
+  "gitlens.currentLine.enabled": false,
+  "gitlens.hovers.currentLine.over": "line",
+  "gitlens.statusBar.enabled": false,
   "redhat.telemetry.enabled": false,
+  "search.followSymlinks": false,
   "telemetry.telemetryLevel": "off",
   "vim.leader": "<space>",
   "vim.useSystemClipboard": true,
@@ -36,7 +41,7 @@
   "workbench.editor.enablePreview": false,
   "workbench.editor.untitled.hint": "hidden",
   "workbench.iconTheme": null,
-  "workbench.list.keyboardNavigation": "simple",
+  "workbench.list.defaultFindMode": "filter",
   "workbench.settings.editor": "json",
   "workbench.startupEditor": "newUntitledFile",
   "workbench.statusBar.visible": true,
@@ -111,6 +116,12 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }
