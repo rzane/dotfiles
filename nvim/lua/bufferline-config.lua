@@ -1,10 +1,9 @@
 local colors = require('material.colors')
-local border = colors.editor.border
+local border = colors.main.black
 
 local bg = {
   default = colors.editor.bg,
-  tab =  colors.editor.contrast,
-  active = colors.editor.active
+  tab =  colors.editor.contrast
 }
 
 local text = {
@@ -22,7 +21,7 @@ local style = function(fg)
 end
 
 local active_style = function(fg)
-  return { fg = fg, bg = bg.active, bold = false, italic = false }
+  return { fg = fg, bg = bg.default, bold = false, italic = false }
 end
 
 return {
@@ -35,7 +34,7 @@ return {
     end,
   },
   highlights = {
-    fill = { bg = colors.editor.bg },
+    fill = { bg = bg.tab },
     background = style(text.default),
     tab = style(text.default),
     tab_selected = active_style(text.default),
@@ -82,8 +81,8 @@ return {
     duplicate_selected = active_style(text.modified),
     duplicate_visible = style(text.modified),
     separator = { fg = border, bg = bg.tab },
-    separator_selected = { fg = border, bg = bg.active },
     separator_visible = { fg = border, bg = bg.tab },
-    indicator_selected = { fg = bg.active, bg = bg.active },
+    separator_selected = { fg = border, bg = bg.tab },
+    indicator_selected = { fg = text.modified, bg = bg.default }
   }
 }

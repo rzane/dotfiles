@@ -79,6 +79,7 @@ bufferline.setup(require("bufferline-config"))
 vim.keymap.set("n", "<leader>ss", ":update<CR>")
 vim.keymap.set("n", "<leader>sq", ":x<CR>")
 vim.keymap.set("n", "<leader>qq", ":q!<CR>")
+vim.keymap.set("n", "<leader>qa", ":qa!<CR>")
 
 vim.keymap.set("n", "<leader>w-", ":split<CR>")
 vim.keymap.set("n", "<leader>w/", ":vsplit<CR>")
@@ -109,14 +110,26 @@ end
 -- Treesitter
 --------------------------
 
-local telescope = require('telescope.builtin')
+local builtin = require("telescope.builtin")
+local actions = require("telescope.actions")
 
-vim.keymap.set('n', '<leader>ff', telescope.find_files)
-vim.keymap.set('n', '<leader>fg', telescope.live_grep)
-vim.keymap.set('n', '<leader>fw', telescope.buffers)
-vim.keymap.set('n', '<leader>fh', telescope.help_tags)
-vim.keymap.set('n', '<leader>fc', telescope.commands)
-vim.keymap.set('n', '<leader>fk', telescope.keymaps)
+require("telescope").setup({
+  defaults = {
+    mappings = {
+      i = {
+        ["<esc>"] = actions.close,
+      },
+    },
+  },
+})
+
+vim.keymap.set('n', '<leader>ff', builtin.find_files)
+vim.keymap.set('n', '<leader>fr', builtin.oldfiles)
+vim.keymap.set('n', '<leader>fg', builtin.live_grep)
+vim.keymap.set('n', '<leader>fw', builtin.buffers)
+vim.keymap.set('n', '<leader>fh', builtin.help_tags)
+vim.keymap.set('n', '<leader>fc', builtin.commands)
+vim.keymap.set('n', '<leader>fk', builtin.keymaps)
 
 --------------------------
 -- Theme
