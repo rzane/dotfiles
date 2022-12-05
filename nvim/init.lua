@@ -136,7 +136,10 @@ vim.keymap.set('n', '<leader>fk', builtin.keymaps)
 --------------------------
 
 require("material").setup({
-  plugins = { "gitsigns", "nvim-tree", "nvim-web-devicons", "telescope" }
+  plugins = { "gitsigns", "nvim-tree", "nvim-web-devicons", "telescope" },
+  contrast = {
+    floating_windows = true
+  },
 })
 
 vim.cmd("colorscheme material")
