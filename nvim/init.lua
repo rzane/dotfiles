@@ -211,5 +211,6 @@ require("nvim-treesitter.configs").setup({
 local lsp = require('lsp-zero')
 
 lsp.preset('recommended')
-lsp.setup()
 lsp.nvim_workspace()
+lsp.configure('ruby_ls', { cmd = { 'bundle', 'exec', 'ruby-lsp' } })
+lsp.setup()
