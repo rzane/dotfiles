@@ -74,21 +74,22 @@ vim.keymap.set("n", "<Leader>t", ":NvimTreeToggle<CR>")
 
 local bufferline = require("bufferline")
 
-bufferline.setup( require('bufferline-config'))
+bufferline.setup(require("bufferline-config"))
 
-vim.keymap.set("n", "<leader>ww", ":w<CR>")
-vim.keymap.set("n", "<leader>wq", ":wq<CR>")
+vim.keymap.set("n", "<leader>ss", ":update<CR>")
+vim.keymap.set("n", "<leader>sq", ":x<CR>")
 vim.keymap.set("n", "<leader>qq", ":q!<CR>")
 
 vim.keymap.set("n", "<leader>w-", ":split<CR>")
 vim.keymap.set("n", "<leader>w/", ":vsplit<CR>")
 vim.keymap.set("n", "<leader>w=", ":wincmd =<CR>")
 
-vim.keymap.set("n", "<leader>wd", ":bd<CR>")
-vim.keymap.set("n", "<leader>wx", ":%bd<CR>")
+vim.keymap.set("n", "<leader>wd", ":bd!<CR>")
+vim.keymap.set("n", "<leader>wx", ":%bd!<CR>")
 
 vim.keymap.set("n", "<leader><tab>", ":b#<CR>")
 vim.keymap.set("n", "<leader>ww", ":wincmd w<CR>")
+
 vim.keymap.set("n", "<leader>wh", ":wincmd h<CR>")
 vim.keymap.set("n", "<leader>wj", ":wincmd j<CR>")
 vim.keymap.set("n", "<leader>wk", ":wincmd k<CR>")
@@ -112,8 +113,12 @@ local telescope = require('telescope.builtin')
 
 vim.keymap.set('n', '<leader>ff', telescope.find_files)
 vim.keymap.set('n', '<leader>fg', telescope.live_grep)
-vim.keymap.set('n', '<leader>ww', telescope.buffers)
+vim.keymap.set('n', '<leader>fw', telescope.buffers)
 vim.keymap.set('n', '<leader>fh', telescope.help_tags)
+vim.keymap.set('n', '<leader>fc', telescope.commands)
+vim.keymap.set('n', '<leader>fk', telescope.keymaps)
+
+-- TODO: https://github.com/LinArcX/telescope-command-palette.nvim
 
 --------------------------
 -- Theme
@@ -170,6 +175,3 @@ end)
 vim.keymap.set("n", "<leader>ar", vim.lsp.buf.rename)
 vim.keymap.set("n", "<leader>ac", vim.lsp.buf.code_action)
 vim.keymap.set("x", '<leader>ac', vim.lsp.buf.range_code_action)
-
-vim.keymap.set("n", "<leader>lspi", ":Mason<CR>")
-vim.keymap.set("n", "<leader>lspr", ":LspRestart<CR>")
