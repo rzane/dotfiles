@@ -76,12 +76,18 @@ local bufferline = require("bufferline")
 
 bufferline.setup( require('bufferline-config'))
 
+vim.keymap.set("n", "<leader>ww", ":w<CR>")
+vim.keymap.set("n", "<leader>wq", ":wq<CR>")
+vim.keymap.set("n", "<leader>qq", ":q!<CR>")
+
 vim.keymap.set("n", "<leader>w-", ":split<CR>")
 vim.keymap.set("n", "<leader>w/", ":vsplit<CR>")
 vim.keymap.set("n", "<leader>w=", ":wincmd =<CR>")
-vim.keymap.set("n", "<leader><tab>", ":b#<CR>")
+
 vim.keymap.set("n", "<leader>wd", ":bd<CR>")
 vim.keymap.set("n", "<leader>wx", ":%bd<CR>")
+
+vim.keymap.set("n", "<leader><tab>", ":b#<CR>")
 vim.keymap.set("n", "<leader>ww", ":wincmd w<CR>")
 vim.keymap.set("n", "<leader>wh", ":wincmd h<CR>")
 vim.keymap.set("n", "<leader>wj", ":wincmd j<CR>")
