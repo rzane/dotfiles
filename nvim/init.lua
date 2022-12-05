@@ -118,8 +118,6 @@ vim.keymap.set('n', '<leader>fh', telescope.help_tags)
 vim.keymap.set('n', '<leader>fc', telescope.commands)
 vim.keymap.set('n', '<leader>fk', telescope.keymaps)
 
--- TODO: https://github.com/LinArcX/telescope-command-palette.nvim
-
 --------------------------
 -- Theme
 --------------------------

@@ -1,3 +1,6 @@
+-- TODO: https://github.com/LinArcX/telescope-command-palette.nvim
+-- TODO: https://github.com/nvim-neotest/neotest
+
 -- Install packer if it isn't already installed
 local ensure_packer = function()
   local install_path = vim.fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
