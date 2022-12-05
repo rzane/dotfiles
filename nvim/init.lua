@@ -1,5 +1,8 @@
--- Install required plugins
 require("plugins")
+
+--------------------------
+-- Settings
+--------------------------
 
 -- Set the leader to space
 vim.g.mapleader = ' '
@@ -41,20 +44,25 @@ vim.opt.breakindent = true
 -- Use full colors
 vim.opt.termguicolors = true
 
---
--- Misc plugins
---
+-- Create splits below or to the right
+vim.opt.splitbelow = true
+vim.opt.splitright = true
+
+-- Disable netrw
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+--------------------------
+-- Plugins
+--------------------------
 
 require("lualine").setup()
 require("gitsigns").setup()
 require('Comment').setup()
 
---
--- Tree view
---
-
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
+--------------------------
+-- File explorer
+--------------------------
 
 require("nvim-tree").setup({
   update_focused_file = {
@@ -107,9 +115,9 @@ require("nvim-tree").setup({
 
 vim.keymap.set("n", "<Leader>t", ":NvimTreeToggle<CR>")
 
---
+--------------------------
 -- Buffers
---
+--------------------------
 
 local bufferline = require("bufferline")
 
@@ -135,9 +143,6 @@ bufferline.setup({
   }
 })
 
-vim.opt.splitbelow = true
-vim.opt.splitright = true
-
 vim.keymap.set("n", "<leader>w-", ":split<CR>")
 vim.keymap.set("n", "<leader>w/", ":vsplit<CR>")
 vim.keymap.set("n", "<leader>w=", ":wincmd =<CR>")
@@ -160,19 +165,20 @@ for i = 1, 9 do
   end)
 end
 
---
--- Telescope
---
+--------------------------
+-- Treesitter
+--------------------------
 
 local telescope = require('telescope.builtin')
+
 vim.keymap.set('n', '<leader>ff', telescope.find_files)
 vim.keymap.set('n', '<leader>fg', telescope.live_grep)
 vim.keymap.set('n', '<leader>ww', telescope.buffers)
 vim.keymap.set('n', '<leader>fh', telescope.help_tags)
 
---
+--------------------------
 -- Theme
---
+--------------------------
 
 require("material").setup({
   plugins = { "gitsigns", "nvim-tree", "nvim-web-devicons", "telescope" }
@@ -180,7 +186,10 @@ require("material").setup({
 
 vim.cmd("colorscheme material")
 
--- Tree-sitter
+--------------------------
+-- Treesitter
+--------------------------
+
 require("nvim-treesitter.configs").setup({
   auto_install = true,
   highlight = {
@@ -195,7 +204,10 @@ require("nvim-treesitter.configs").setup({
   }
 })
 
+--------------------------
 -- Language server
+--------------------------
+
 local lsp = require('lsp-zero')
 
 lsp.preset('recommended')
