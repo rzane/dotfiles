@@ -58,60 +58,13 @@ vim.g.loaded_netrwPlugin = 1
 
 require("lualine").setup()
 require("gitsigns").setup()
-require('Comment').setup()
+require("Comment").setup()
 
 --------------------------
 -- File explorer
 --------------------------
 
-require("nvim-tree").setup({
-  update_focused_file = {
-    enable = true,
-    update_root = true
-  },
-  renderer = {
-    root_folder_modifier = ":t",
-    icons = {
-      glyphs = {
-        default = "",
-        symlink = "",
-        folder = {
-          arrow_open = "",
-          arrow_closed = "",
-          default = "",
-          open = "",
-          empty = "",
-          empty_open = "",
-          symlink = "",
-          symlink_open = "",
-        },
-        git = {
-          unstaged = "",
-          staged = "S",
-          unmerged = "",
-          renamed = "➜",
-          untracked = "U",
-          deleted = "",
-          ignored = "◌",
-        },
-      },
-    },
-  },
-  diagnostics = {
-    enable = true,
-    show_on_dirs = true,
-    icons = {
-      hint = "",
-      info = "",
-      warning = "",
-      error = "",
-    },
-  },
-  view = {
-    width = 30,
-    side = "left",
-  },
-})
+require("nvim-tree").setup(require("nvim-tree-config"))
 
 vim.keymap.set("n", "<Leader>t", ":NvimTreeToggle<CR>")
 
@@ -121,27 +74,7 @@ vim.keymap.set("n", "<Leader>t", ":NvimTreeToggle<CR>")
 
 local bufferline = require("bufferline")
 
-local fg = require('material.colors').editor.fg
-local bg = require('material.colors').editor.contrast
-
-bufferline.setup({
-  options = {
-    numbers = "ordinal",
-    show_close_icon = false,
-  },
-  highlights = {
-    fill = { bg = bg, fg = fg },
-    background = { bg = bg, fg = fg },
-    tab = { bg = bg, fg = fg },
-    close_button = { bg = bg },
-    numbers = { bg = bg, fg = fg },
-    separator = { bg = bg },
-    pick = { bg = bg },
-    offset_separator = { bg = bg },
-    buffer_selected = { italic = false },
-    numbers_selected = { italic = false }
-  }
-})
+bufferline.setup( require('bufferline-config'))
 
 vim.keymap.set("n", "<leader>w-", ":split<CR>")
 vim.keymap.set("n", "<leader>w/", ":vsplit<CR>")
@@ -214,3 +147,23 @@ lsp.preset('recommended')
 lsp.nvim_workspace()
 lsp.configure('ruby_ls', { cmd = { 'bundle', 'exec', 'ruby-lsp' } })
 lsp.setup()
+
+vim.diagnostic.config({
+  virtual_text = true,
+  signs = true,
+  update_in_insert = false,
+  underline = true,
+  severity_sort = false,
+  float = true,
+})
+
+vim.keymap.set("n", "<leader>af", function ()
+  vim.lsp.buf.format({ async = true, timeout = 3000 })
+end)
+
+vim.keymap.set("n", "<leader>ar", vim.lsp.buf.rename)
+vim.keymap.set("n", "<leader>ac", vim.lsp.buf.code_action)
+vim.keymap.set("x", '<leader>ac', vim.lsp.buf.range_code_action)
+
+vim.keymap.set("n", "<leader>lspi", ":Mason<CR>")
+vim.keymap.set("n", "<leader>lspr", ":LspRestart<CR>")
