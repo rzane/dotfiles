@@ -66,6 +66,7 @@ require("lualine").setup()
 require("gitsigns").setup()
 require("Comment").setup()
 require("which-key").setup()
+require("nvim-autopairs").setup()
 
 --------------------------
 -- File explorer

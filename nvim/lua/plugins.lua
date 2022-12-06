@@ -40,6 +40,9 @@ packer.startup(function(use)
   -- Material theme
   use 'marko-cerovac/material.nvim'
 
+  -- Autopairs
+  use 'windwp/nvim-autopairs'
+
   -- Status line
   use { 'nvim-lualine/lualine.nvim', requires = { 'nvim-tree/nvim-web-devicons' } }
 
