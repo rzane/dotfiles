@@ -74,7 +74,8 @@ require("nvim-autopairs").setup()
 
 require("nvim-tree").setup(require("nvim-tree-config"))
 
-vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { desc = "open file explorer" })
+vim.keymap.set("n", "<leader>ee", ":NvimTreeToggle<CR>", { desc = "toggle file explorer" })
+vim.keymap.set("n", "<leader>ef", ":NvimTreeFocus<CR>", { desc = "focus file explorer" })
 
 -- Quit vim when nvim-tree is the last window
 vim.api.nvim_create_autocmd("BufEnter", {

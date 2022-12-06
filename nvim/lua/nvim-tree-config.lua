@@ -4,48 +4,28 @@ return {
     update_root = true
   },
   renderer = {
+    highlight_git = true,
     root_folder_modifier = ":t",
     icons = {
       show = {
-        file = false
+        git = false,
+        file = false,
+        folder = false
       },
       glyphs = {
-        default = "",
-        symlink = "",
         folder = {
-          arrow_open = "",
-          arrow_closed = "",
-          default = "",
-          open = "",
-          empty = "",
-          empty_open = "",
-          symlink = "",
-          symlink_open = "",
-        },
-        git = {
-          unstaged = "",
-          staged = "S",
-          unmerged = "",
-          renamed = "➜",
-          untracked = "U",
-          deleted = "",
-          ignored = "◌",
-        },
-      },
-    },
+          arrow_open = "",
+          arrow_closed = "",
+        }
+      }
+    }
   },
   diagnostics = {
     enable = true,
     show_on_dirs = false,
-    icons = {
-      hint = "",
-      info = "",
-      warning = "",
-      error = "",
-    },
   },
   view = {
     width = 30,
     side = "left",
-  },
+  }
 }
