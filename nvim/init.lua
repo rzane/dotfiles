@@ -67,7 +67,7 @@ require("which-key").setup()
 
 require("nvim-tree").setup(require("nvim-tree-config"))
 
-vim.keymap.set("n", "<Leader>t", ":NvimTreeToggle<CR>")
+vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { desc = "open file explorer" })
 
 -- Quit vim when nvim-tree is the last window
 vim.api.nvim_create_autocmd("BufEnter", {
@@ -87,27 +87,23 @@ local bufferline = require("bufferline")
 
 bufferline.setup(require("bufferline-config"))
 
-vim.keymap.set("n", "<leader>s", ":update<CR>")
-vim.keymap.set("n", "<leader>q", ":x<CR>")
+vim.keymap.set("n", "<leader>s", ":update<CR>", { desc = "save" })
+vim.keymap.set("n", "<leader>q", ":x!<CR>", { desc = "save and quit" })
+vim.keymap.set("n", "<leader>wd", ":bd!<CR>", { desc = "close buffer" })
+vim.keymap.set("n", "<leader>wo", ":%bd|e#|bd#<CR>", { desc = "close other buffers" })
+vim.keymap.set("n", "<leader><tab>", ":b#<CR>", { desc = "go to previous buffer" })
 
-vim.keymap.set("n", "<leader>w-", ":new<CR>")
-vim.keymap.set("n", "<leader>w/", ":vnew<CR>")
-vim.keymap.set("n", "<leader>w=", ":wincmd =<CR>")
+vim.keymap.set("n", "<leader>w-", ":new<CR>", { desc = "split horizontally" })
+vim.keymap.set("n", "<leader>w/", ":vnew<CR>", { desc = "split vertically" })
 
-vim.keymap.set("n", "<leader>wd", ":bd!<CR>")
-vim.keymap.set("n", "<leader>wx", ":%bd!<CR>")
-
-vim.keymap.set("n", "<leader><tab>", ":b#<CR>")
-vim.keymap.set("n", "<leader>ww", ":wincmd w<CR>")
-
-vim.keymap.set("n", "<leader>wh", ":wincmd h<CR>")
-vim.keymap.set("n", "<leader>wj", ":wincmd j<CR>")
-vim.keymap.set("n", "<leader>wk", ":wincmd k<CR>")
-vim.keymap.set("n", "<leader>wl", ":wincmd l<CR>")
-vim.keymap.set("n", "<leader>wH", ":wincmd H<CR>")
-vim.keymap.set("n", "<leader>wJ", ":wincmd J<CR>")
-vim.keymap.set("n", "<leader>wK", ":wincmd K<CR>")
-vim.keymap.set("n", "<leader>wL", ":wincmd L<CR>")
+vim.keymap.set("n", "<leader>wh", ":wincmd h<CR>", { desc = "move to window left" })
+vim.keymap.set("n", "<leader>wl", ":wincmd l<CR>", { desc = "move to window right" })
+vim.keymap.set("n", "<leader>wj", ":wincmd j<CR>", { desc = "move to window below" })
+vim.keymap.set("n", "<leader>wk", ":wincmd k<CR>", { desc = "move to window above" })
+vim.keymap.set("n", "<leader>wH", ":wincmd H<CR>", { desc = "move window left" })
+vim.keymap.set("n", "<leader>wL", ":wincmd L<CR>", { desc = "move window right" })
+vim.keymap.set("n", "<leader>wK", ":wincmd K<CR>", { desc = "move window below" })
+vim.keymap.set("n", "<leader>wJ", ":wincmd J<CR>", { desc = "move window above" })
 
 for i = 1, 9 do
   vim.keymap.set("n", "<leader>" .. i, function()
@@ -132,13 +128,11 @@ require("telescope").setup({
   },
 })
 
-vim.keymap.set('n', '<leader>ff', builtin.find_files)
-vim.keymap.set('n', '<leader>fr', builtin.oldfiles)
-vim.keymap.set('n', '<leader>fg', builtin.live_grep)
-vim.keymap.set('n', '<leader>fw', builtin.buffers)
-vim.keymap.set('n', '<leader>fh', builtin.help_tags)
-vim.keymap.set('n', '<leader>fc', builtin.commands)
-vim.keymap.set('n', '<leader>fk', builtin.keymaps)
+vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = "find file" })
+vim.keymap.set('n', '<leader>fr', builtin.oldfiles, { desc = "find recent file" })
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = "search files" })
+vim.keymap.set('n', '<leader>fw', builtin.buffers, { desc = "find buffer" })
+vim.keymap.set('n', '<leader>fc', builtin.commands, { desc = "find command" })
 
 --------------------------
 -- Theme
@@ -191,10 +185,10 @@ vim.diagnostic.config({
   float = true,
 })
 
-vim.keymap.set("n", "<leader>af", function ()
+vim.keymap.set("n", "<leader>af", function()
   vim.lsp.buf.format({ async = true, timeout = 3000 })
 end)
 
-vim.keymap.set("n", "<leader>ar", vim.lsp.buf.rename)
-vim.keymap.set("n", "<leader>ac", vim.lsp.buf.code_action)
-vim.keymap.set("x", '<leader>ac', vim.lsp.buf.range_code_action)
+vim.keymap.set("i", "<C-space>", vim.lsp.buf.completion, { desc = "toggle completion" })
+vim.keymap.set("n", "<leader>ar", vim.lsp.buf.rename, { desc = "rename symbol" })
+vim.keymap.set("n", "<leader>ac", vim.lsp.buf.code_action, { desc = "code actionn" })
