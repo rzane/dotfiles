@@ -110,7 +110,7 @@ for i = 1, 9 do
 end
 
 --------------------------
--- Treesitter
+-- Telescope
 --------------------------
 
 local builtin = require("telescope.builtin")
