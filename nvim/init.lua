@@ -220,7 +220,8 @@ require("nvim-test").setup()
 
 require('nvim-test.runners.rspec'):setup({
   command = "bundle",
-  args = { "exec", "rspec" }
+  args = { "exec", "rspec" },
+  filename_modifier = [[:s?app?spec?]]
 })
 
 vim.keymap.set("n", "<leader>ts", ":TestSuite<CR>", { desc = "run the full test suite" })
