@@ -92,8 +92,8 @@ vim.keymap.set("n", "<leader>sq", ":x<CR>")
 vim.keymap.set("n", "<leader>qq", ":q!<CR>")
 vim.keymap.set("n", "<leader>qa", ":qa!<CR>")
 
-vim.keymap.set("n", "<leader>w-", ":split<CR>")
-vim.keymap.set("n", "<leader>w/", ":vsplit<CR>")
+vim.keymap.set("n", "<leader>w-", ":new<CR>")
+vim.keymap.set("n", "<leader>w/", ":vnew<CR>")
 vim.keymap.set("n", "<leader>w=", ":wincmd =<CR>")
 
 vim.keymap.set("n", "<leader>wd", ":bd!<CR>")
