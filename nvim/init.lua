@@ -211,3 +211,20 @@ vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "return to normal mode" })
 vim.keymap.set("n", "<leader>tt", ":tab terminal<CR>", { desc = "open terminal in new tab" })
 vim.keymap.set("n", "<leader>t-", ":new|terminal<CR>", { desc = "open terminal in horizontal split" })
 vim.keymap.set("n", "<leader>t/", ":vnew|terminal<CR>", { desc = "open terminal in vertical split" })
+
+--------------------
+-- Test runner
+--------------------
+
+require("nvim-test").setup()
+
+require('nvim-test.runners.rspec'):setup({
+  command = "bundle",
+  args = { "exec", "rspec" }
+})
+
+vim.keymap.set("n", "<leader>ts", ":TestSuite<CR>", { desc = "run the full test suite" })
+vim.keymap.set("n", "<leader>tf", ":TestFile<CR>", { desc = "run the current test" })
+vim.keymap.set("n", "<leader>tn", ":TestNearest<CR>", { desc = "run the nearest test" })
+vim.keymap.set("n", "<leader>tl", ":TestLast<CR>", { desc = "run the last test" })
+vim.keymap.set("n", "<leader>te", ":TestEdit<CR>", { desc = "edit tests for the current file" })

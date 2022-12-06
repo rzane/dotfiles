@@ -62,6 +62,9 @@ packer.startup(function(use)
   -- Jump to file
   use { 'nvim-telescope/telescope.nvim', tag = '0.1.0', requires = { { 'nvim-lua/plenary.nvim' } } }
 
+  -- Run tests
+  use 'klen/nvim-test'
+
   -- Language server
   use {
     'VonHeikemen/lsp-zero.nvim',
