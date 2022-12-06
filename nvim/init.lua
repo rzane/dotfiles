@@ -59,6 +59,7 @@ vim.g.loaded_netrwPlugin = 1
 require("lualine").setup()
 require("gitsigns").setup()
 require("Comment").setup()
+require("which-key").setup()
 
 --------------------------
 -- File explorer
@@ -136,7 +137,7 @@ vim.keymap.set('n', '<leader>fk', builtin.keymaps)
 --------------------------
 
 require("material").setup({
-  plugins = { "gitsigns", "nvim-tree", "nvim-web-devicons", "telescope" },
+  plugins = { "gitsigns", "nvim-tree", "nvim-web-devicons", "telescope", "which-key" },
   contrast = {
     floating_windows = true
   },

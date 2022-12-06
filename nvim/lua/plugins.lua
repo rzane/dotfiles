@@ -34,6 +34,9 @@ packer.startup(function(use)
   -- Shortcuts for commenting
   use 'numToStr/Comment.nvim'
 
+  -- Show keymaps
+  use 'folke/which-key.nvim'
+
   -- Material theme
   use 'marko-cerovac/material.nvim'
 
