@@ -52,6 +52,12 @@ vim.opt.splitright = true
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+-- Tidy up whitespace
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+  pattern = { "*" },
+  command = [[%s/\s\+$//e]],
+})
+
 --------------------------
 -- Plugins
 --------------------------
@@ -192,3 +198,17 @@ end)
 vim.keymap.set("i", "<C-space>", vim.lsp.buf.completion, { desc = "toggle completion" })
 vim.keymap.set("n", "<leader>ar", vim.lsp.buf.rename, { desc = "rename symbol" })
 vim.keymap.set("n", "<leader>ac", vim.lsp.buf.code_action, { desc = "code actionn" })
+
+-----------------------
+-- Terminal
+-----------------------
+
+vim.api.nvim_create_autocmd({ "TermOpen" }, {
+  pattern = { "*" },
+  command = "startinsert",
+})
+
+vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "return to normal mode" })
+vim.keymap.set("n", "<leader>tt", ":tab terminal<CR>", { desc = "open terminal in new tab" })
+vim.keymap.set("n", "<leader>t-", ":new|terminal<CR>", { desc = "open terminal in horizontal split" })
+vim.keymap.set("n", "<leader>t/", ":vnew|terminal<CR>", { desc = "open terminal in vertical split" })
