@@ -1,9 +1,9 @@
 local colors = require('material.colors')
-local border = colors.main.black
+local border = colors.editor.bg_alt
 
 local bg = {
   default = colors.editor.bg,
-  tab =  colors.editor.contrast
+  tab = colors.editor.contrast
 }
 
 local text = {
