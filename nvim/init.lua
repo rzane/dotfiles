@@ -87,10 +87,8 @@ local bufferline = require("bufferline")
 
 bufferline.setup(require("bufferline-config"))
 
-vim.keymap.set("n", "<leader>ss", ":update<CR>")
-vim.keymap.set("n", "<leader>sq", ":x<CR>")
-vim.keymap.set("n", "<leader>qq", ":q!<CR>")
-vim.keymap.set("n", "<leader>qa", ":qa!<CR>")
+vim.keymap.set("n", "<leader>s", ":update<CR>")
+vim.keymap.set("n", "<leader>q", ":x<CR>")
 
 vim.keymap.set("n", "<leader>w-", ":new<CR>")
 vim.keymap.set("n", "<leader>w/", ":vnew<CR>")
