@@ -7,6 +7,10 @@ require("plugins")
 -- Set the leader to space
 vim.g.mapleader = ' '
 
+-- Disable netrw
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 -- Set the material theme style
 vim.g.material_style = 'palenight'
 
@@ -48,9 +52,8 @@ vim.opt.termguicolors = true
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 
--- Disable netrw
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
+-- Show character limit
+vim.opt.colorcolumn = '100'
 
 -- Tidy up whitespace
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
@@ -87,6 +90,7 @@ bufferline.setup(require("bufferline-config"))
 
 vim.keymap.set("n", "<leader>s", ":update<CR>", { desc = "save" })
 vim.keymap.set("n", "<leader>q", ":x!<CR>", { desc = "save and quit" })
+
 vim.keymap.set("n", "<leader>wd", ":bd!<CR>", { desc = "close buffer" })
 vim.keymap.set("n", "<leader>wo", ":%bd|e#|bd#<CR>", { desc = "close other buffers" })
 vim.keymap.set("n", "<leader><tab>", ":b#<CR>", { desc = "go to previous buffer" })
