@@ -132,10 +132,11 @@ require("telescope").setup({
 })
 
 vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = "find file" })
-vim.keymap.set('n', '<leader>fr', builtin.oldfiles, { desc = "find recent file" })
+vim.keymap.set('n', '<leader>fF', builtin.oldfiles, { desc = "find recent file" })
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = "search files" })
 vim.keymap.set('n', '<leader>fw', builtin.buffers, { desc = "find buffer" })
 vim.keymap.set('n', '<leader>fc', builtin.commands, { desc = "find command" })
+vim.keymap.set('n', '<leader>fr', builtin.resume, { desc = "resume find" })
 
 --------------------------
 -- Theme
