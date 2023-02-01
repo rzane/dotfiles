@@ -158,7 +158,7 @@ require("nvim-treesitter.configs").setup({
   auto_install = true,
   highlight = {
     enable = true,
-    disable = { "lua", "help", "gitcommit" }
+    disable = { "lua", "help", "gitcommit", "eruby" }
   },
   indent = {
     enable = true
