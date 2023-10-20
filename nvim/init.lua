@@ -179,35 +179,37 @@ require("nvim-treesitter.configs").setup({
 -- Language server
 --------------------------
 
-local lsp = require('lsp-zero')
+local lsp_zero = require('lsp-zero')
 
-lsp.preset('recommended')
-lsp.nvim_workspace()
-lsp.configure('ruby_ls', { cmd = { 'bundle', 'exec', 'ruby-lsp' } })
-lsp.setup()
-
-vim.diagnostic.config({
-  virtual_text = true,
-  signs = true,
-  update_in_insert = false,
-  underline = true,
-  severity_sort = false,
-  float = true,
-})
-
-vim.keymap.set("n", "<leader>af", function()
-  vim.lsp.buf.format({ async = true, timeout = 3000 })
+lsp_zero.on_attach(function(client, bufnr)
+  -- see :help lsp-zero-keybindings
+  -- to learn the available actions
+  lsp_zero.default_keymaps({buffer = bufnr})
 end)
 
-vim.keymap.set("i", "<C-space>", vim.lsp.buf.completion, { desc = "toggle completion" })
-vim.keymap.set("n", "<leader>ar", vim.lsp.buf.rename, { desc = "rename symbol" })
-vim.keymap.set("n", "<leader>ac", vim.lsp.buf.code_action, { desc = "code action" })
+lsp_zero.set_sign_icons({
+  error = '✘',
+  warn = '▲',
+  hint = '⚑',
+  info = '»'
+})
 
-vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-  pattern = { "*" },
-  callback = function()
-    vim.lsp.buf.format({ async = false })
-  end
+lsp_zero.format_on_save({
+  format_opts = {
+    async = false,
+    timeout_ms = 10000,
+  },
+  servers = {
+    ['tsserver'] = {'javascript', 'typescript'},
+    ['elixirls'] = {'elixir', 'eelixir', 'heex'},
+  }
+})
+
+require('mason').setup({})
+require('mason-lspconfig').setup({
+  handlers = {
+    lsp_zero.default_setup,
+  }
 })
 
 -----------------------
