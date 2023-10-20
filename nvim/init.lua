@@ -1,5 +1,3 @@
-require("plugins")
-
 --------------------------
 -- Settings
 --------------------------
@@ -70,6 +68,7 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 -- Plugins
 --------------------------
 
+require("plugins")
 require("lualine").setup()
 require("gitsigns").setup()
 require("Comment").setup()
