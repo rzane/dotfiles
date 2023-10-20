@@ -201,7 +201,7 @@ end)
 
 vim.keymap.set("i", "<C-space>", vim.lsp.buf.completion, { desc = "toggle completion" })
 vim.keymap.set("n", "<leader>ar", vim.lsp.buf.rename, { desc = "rename symbol" })
-vim.keymap.set("n", "<leader>ac", vim.lsp.buf.code_action, { desc = "code actionn" })
+vim.keymap.set("n", "<leader>ac", vim.lsp.buf.code_action, { desc = "code action" })
 
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
   pattern = { "*" },
