@@ -55,11 +55,9 @@ packer.startup(function(use)
   -- Syntax-aware editing
   use {
     'nvim-treesitter/nvim-treesitter',
-    run = function()
-      local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
-      ts_update()
-    end,
+    run = function() require("nvim-treesitter.install").update { with_sync = true } end
   }
+
   use 'RRethy/nvim-treesitter-endwise'
 
   -- Pretty buffers
