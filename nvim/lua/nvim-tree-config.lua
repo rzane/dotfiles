@@ -23,6 +23,12 @@ return {
   diagnostics = {
     enable = true,
     show_on_dirs = false,
+    icons = {
+      error = '✘',
+      warning = '▲',
+      hint = '⚑',
+      info = '»'
+    },
   },
   view = {
     width = 30,
