@@ -20,9 +20,15 @@ return {
       }
     }
   },
+  git = {
+    enable = true,
+    show_on_dirs = true,
+    show_on_open_dirs = false,
+  },
   diagnostics = {
     enable = true,
-    show_on_dirs = false,
+    show_on_dirs = true,
+    show_on_open_dirs = false,
     icons = {
       error = '✘',
       warning = '▲',
