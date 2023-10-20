@@ -146,10 +146,18 @@ vim.keymap.set('n', '<leader>fr', builtin.resume, { desc = "resume find" })
 -- Theme
 --------------------------
 
+local colors = require("material.colors")
+
 require("material").setup({
   plugins = { "gitsigns", "nvim-tree", "nvim-web-devicons", "telescope", "which-key" },
   contrast = {
     floating_windows = true
+  },
+  custom_highlights = {
+    NvimTreeRootFolder       = { fg = colors.editor.fg_dark, bg = colors.backgrounds.sidebars },
+    NvimTreeFolderName       = { fg = colors.editor.fg_dark },
+    NvimTreeOpenedFolderName = { fg = colors.editor.fg_dark },
+    NvimTreeExecFile         = { fg = colors.editor.accent },
   },
 })
 
