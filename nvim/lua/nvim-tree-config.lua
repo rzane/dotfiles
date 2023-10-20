@@ -6,6 +6,7 @@ return {
   renderer = {
     highlight_git = true,
     root_folder_modifier = ":t",
+    root_folder_label = false,
     icons = {
       show = {
         git = false,
