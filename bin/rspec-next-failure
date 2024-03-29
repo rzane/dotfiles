@@ -1,0 +1,10 @@
+#!/bin/bash
+
+set -euo pipefail
+
+bundle exec rspec \
+  --only-failures \
+  --fail-fast \
+  --order defined \
+  "$@" \
+  $(rspec-failures | tac | awk '{print $2}')
