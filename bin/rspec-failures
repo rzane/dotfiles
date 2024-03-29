@@ -1,0 +1,5 @@
+#!/bin/bash
+
+set -euo pipefail
+
+grep ' | failed' spec/examples.txt | cut -d [ -f 1  | uniq -c | sort
