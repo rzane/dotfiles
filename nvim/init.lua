@@ -40,10 +40,12 @@ vim.opt.signcolumn = "yes"
 -- Faster completion (default is 4s)
 vim.opt.updatetime = 250
 
--- Indent two spaces by default
-vim.o.expandtab = true
-vim.o.tabstop = 2
-vim.o.shiftwidth = 2
+-- Set indent
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+
+-- Indent using spaces
+vim.opt.expandtab = true
 
 -- Indent after breaking long lines
 vim.opt.breakindent = true
