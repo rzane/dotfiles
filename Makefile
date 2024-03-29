@@ -8,19 +8,13 @@ else
 endif
 
 .PHONY: install
-install: vim nvim zsh git vscode kitty
+install: nvim zsh git vscode kitty
 
 .PHONY: nvim
 nvim:
 	mkdir -p $(HOME)/.config/nvim
 	ln -sf $(realpath nvim/init.lua) $(HOME)/.config/nvim/init.lua
 	ln -sf $(realpath nvim/lua) $(HOME)/.config/nvim/lua
-
-.PHONY: vim
-vim:
-	mkdir -p $(HOME)/.vim
-	ln -sf $(realpath vim/vimrc) $(HOME)/.vimrc
-	ln -sf $(realpath vim/vimrc.bundles) $(HOME)/.vim/vimrc.bundles
 
 .PHONY: zsh
 zsh:
