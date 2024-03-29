@@ -233,6 +233,11 @@ cmp.setup({
   }
 })
 
+vim.keymap.set("i", "<C-space>", vim.lsp.buf.completion, { desc = "toggle completion" })
+vim.keymap.set("n", "<leader>ar", vim.lsp.buf.rename, { desc = "rename symbol" })
+vim.keymap.set("n", "<leader>ac", vim.lsp.buf.code_action, { desc = "code action" })
+vim.keymap.set("n", "<leader>ag", vim.lsp.buf.definition, { desc = "go to definition" })
+
 -----------------------
 -- Terminal
 -----------------------
