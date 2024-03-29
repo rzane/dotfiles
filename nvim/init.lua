@@ -169,6 +169,7 @@ vim.cmd("colorscheme material")
 -- Treesitter
 --------------------------
 
+require('nvim-treesitter.install').compilers = { 'gcc' }
 require("nvim-treesitter.configs").setup({
   ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "ruby", "sql", "heex" },
   auto_install = true,
