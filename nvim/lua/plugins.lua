@@ -85,9 +85,6 @@ packer.startup(function(use)
     }
   }
 
-  -- GitHub Copilot
-  use { 'github/copilot.vim', branch = 'release' }
-
   if is_bootstrap then
     packer.sync()
   end
