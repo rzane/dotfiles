@@ -101,7 +101,7 @@ alias grb='gh repo sync && git rebase'
 alias gbl="git for-each-ref --sort=committerdate refs/heads/ --format='%(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"
 
 function g86 {
-  git branch --merged "${1:-master}" | egrep -v "(^\*|${1:-master})" | xargs git branch -d
+  git branch --merged "${1:-main}" | egrep -v "(^\*|${1:-main})" | xargs git branch -d
 }
 
 ########################
