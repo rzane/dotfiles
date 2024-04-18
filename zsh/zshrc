@@ -153,6 +153,11 @@ function gsub {
   rg -0 -l "$1" "${@:3}" | xargs -0 perl -pi -e "s/$1/$2/g"
 }
 
+# Convert CSV to JSON
+function csv-to-json {
+  ruby -r csv -r json -e 'puts CSV.new(ARGF.file, headers: true).map(&:to_h).to_json' "$@"
+}
+
 ########################
 # Customization
 ########################
@@ -160,3 +165,5 @@ function gsub {
 if [ -e ~/.zshrc.local ]; then
   source ~/.zshrc.local
 fi
+
+source "$HOME/.bootstrap/env.sh"
