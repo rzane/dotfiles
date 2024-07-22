@@ -22,6 +22,7 @@ brew "erlang"
 brew "git-delta"
 
 cask "google-chrome"
+cask "firefox"
 cask "docker"
 cask "kitty"
 cask "vlc"
