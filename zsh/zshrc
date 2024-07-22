@@ -62,9 +62,9 @@ if [ $commands[bat] ]; then
   alias cat="bat --style plain"
 fi
 
-if [ $commands[exa] ]; then
-  alias ls="exa --git --header"
-  alias tree="exa --git --long --header --tree"
+if [ $commands[eza] ]; then
+  alias ls="eza --git --header"
+  alias tree="eza --git --long --header --tree"
 fi
 
 ########################
