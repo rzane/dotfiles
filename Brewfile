@@ -1,7 +1,5 @@
 # vi:set ft=ruby
 
-tap "homebrew/cask"
-
 brew "nvim"
 brew "ripgrep"
 brew "zsh"
