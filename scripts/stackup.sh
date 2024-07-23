@@ -28,10 +28,6 @@ for plugin in "${plugins[@]}"; do
   fi
 done
 
-echo "===>> Importing nodejs release team keyring..."
-bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
-printf "Done\n\n"
-
 for plugin in "${plugins[@]}"; do
   version="$(asdf list-all "$plugin" | grep '^\d' | grep -v 'dev\|preview\|rc' | tail -1)"
 
