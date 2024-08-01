@@ -61,7 +61,7 @@ packer.startup(function(use)
   use 'RRethy/nvim-treesitter-endwise'
 
   -- Pretty buffers
-  use { 'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons' }
+  use { 'akinsho/bufferline.nvim', tag = "v4.*", requires = 'nvim-tree/nvim-web-devicons' }
 
   -- Jump to file
   use { 'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { { 'nvim-lua/plenary.nvim' } } }
