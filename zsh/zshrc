@@ -158,6 +158,10 @@ function csv-to-json {
   ruby -r csv -r json -e 'puts CSV.new(ARGF.file, headers: true).map(&:to_h).to_json' "$@"
 }
 
+function json-to-csv {
+  jq -r '(map(keys) | add | unique) as $cols | map(. as $row | $cols | map($row[.])) as $rows | $cols, $rows[] | @csv' "$@"
+}
+
 ########################
 # Customization
 ########################
