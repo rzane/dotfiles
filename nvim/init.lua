@@ -191,17 +191,14 @@ require("nvim-treesitter.configs").setup({
 
 local lsp_zero = require('lsp-zero')
 
-lsp_zero.on_attach(function(client, bufnr)
-  -- see :help lsp-zero-keybindings
-  -- to learn the available actions
+local lsp_attach = function(client, bufnr)
   lsp_zero.default_keymaps({buffer = bufnr})
-end)
+end
 
-lsp_zero.set_sign_icons({
-  error = '✘',
-  warn = '▲',
-  hint = '⚑',
-  info = '»'
+lsp_zero.extend_lspconfig({
+  lsp_attach = lsp_attach,
+  sign_text = { error = '✘', warn = '▲', hint = '⚑', info = '»' },
+  capabilities = require('cmp_nvim_lsp').default_capabilities(),
 })
 
 lsp_zero.format_on_save({
@@ -218,25 +215,44 @@ lsp_zero.format_on_save({
 require('mason').setup({})
 require('mason-lspconfig').setup({
   handlers = {
-    lsp_zero.default_setup,
+    function(server_name)
+      require('lspconfig')[server_name].setup({})
+    end,
   }
 })
 
 local cmp = require('cmp')
 local cmp_action = require('lsp-zero').cmp_action()
 
-cmp.setup({
-  mapping = {
-    ['<Tab>'] = cmp_action.tab_complete(),
-    ['<S-Tab>'] = cmp_action.select_prev_or_fallback(),
-    ['<CR>'] = cmp.mapping.confirm({select = false}),
-  }
-})
+require('luasnip.loaders.from_vscode').lazy_load()
 
-vim.keymap.set("i", "<C-space>", vim.lsp.buf.completion, { desc = "toggle completion" })
-vim.keymap.set("n", "<leader>ar", vim.lsp.buf.rename, { desc = "rename symbol" })
-vim.keymap.set("n", "<leader>ac", vim.lsp.buf.code_action, { desc = "code action" })
-vim.keymap.set("n", "<leader>ag", vim.lsp.buf.definition, { desc = "go to definition" })
+cmp.setup({
+  sources = {
+    {name = 'path'},
+    {name = 'nvim_lsp'},
+    {name = 'luasnip', keyword_length = 2},
+    {name = 'buffer', keyword_length = 3},
+  },
+  snippet = {
+    expand = function(args)
+      require('luasnip').lsp_expand(args.body)
+    end,
+  },
+  mapping = cmp.mapping.preset.insert({
+    ['<Enter>'] = cmp.mapping.confirm({ select = true }),
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<Tab>'] = cmp_action.tab_complete(),
+
+    -- scroll up and down the documentation window
+    ['<C-u>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-d>'] = cmp.mapping.scroll_docs(4),
+
+    -- navigate between snippet placeholders
+    ['<C-f>'] = cmp_action.luasnip_jump_forward(),
+    ['<C-b>'] = cmp_action.luasnip_jump_backward(),
+  }),
+  formatting = lsp_zero.cmp_format({details = true}),
+})
 
 -----------------------
 -- Terminal

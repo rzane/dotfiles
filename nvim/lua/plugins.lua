@@ -69,7 +69,7 @@ packer.startup(function(use)
   -- Language server
   use {
     'VonHeikemen/lsp-zero.nvim',
-    branch = 'v3.x',
+    branch = 'v4.x',
     requires = {
       --- Manage LSP servers from neovim
       {'williamboman/mason.nvim'},
@@ -81,7 +81,11 @@ packer.startup(function(use)
       -- Autocompletion
       {'hrsh7th/nvim-cmp'},
       {'hrsh7th/cmp-nvim-lsp'},
+      {'hrsh7th/cmp-buffer'},
+      {'hrsh7th/cmp-path'},
       {'L3MON4D3/LuaSnip'},
+      {'saadparwaiz1/cmp_luasnip'},
+      {'rafamadriz/friendly-snippets'},
     }
   }
 
