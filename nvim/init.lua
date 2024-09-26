@@ -192,7 +192,9 @@ require("nvim-treesitter.configs").setup({
 local lsp_zero = require('lsp-zero')
 
 local lsp_attach = function(client, bufnr)
-  lsp_zero.default_keymaps({buffer = bufnr})
+  local opts = { buffer = bufnr }
+  lsp_zero.default_keymaps(opts)
+  vim.keymap.set('n', '<leader>af', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
 end
 
 lsp_zero.extend_lspconfig({
