@@ -162,6 +162,18 @@ function json-to-csv {
   jq -r '(map(keys) | add | unique) as $cols | map(. as $row | $cols | map($row[.])) as $rows | $cols, $rows[] | @csv' "$@"
 }
 
+function timer {
+  local start=$(date +%s)
+
+  while true; do
+    local delta=$(( $(date +%s) - start ))
+    local hours=$(( delta / 3600 ))
+    local minutes=$(( delta % 3600 / 60 ))
+    local seconds=$(( delta % 60 ))
+    printf '%02d:%02d:%02d\r' "$hours" "$minutes" "$seconds"
+  done
+}
+
 ########################
 # Customization
 ########################
