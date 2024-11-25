@@ -125,6 +125,7 @@ end
 
 local builtin = require("telescope.builtin")
 local actions = require("telescope.actions")
+local sorters = require("telescope.sorters")
 
 require("telescope").setup({
   defaults = {
@@ -133,6 +134,14 @@ require("telescope").setup({
       i = {
         ["<esc>"] = actions.close,
       },
+    },
+  },
+  pickers = {
+    find_files = {
+      theme = "dropdown",
+      previewer = false,
+      find_command = { "fd", "--type", "f", "--color", "never", "--full-path" },
+      sorter = sorters.get_generic_fuzzy_sorter(),
     },
   },
 })
