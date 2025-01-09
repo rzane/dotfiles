@@ -225,7 +225,7 @@ lsp_zero.format_on_save({
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-  ensure_installed = {'ruby-lsp', 'sorbet'},
+  ensure_installed = {'ruby_lsp', 'sorbet'},
   handlers = {
     function(server_name)
       require('lspconfig')[server_name].setup({})
@@ -285,3 +285,14 @@ vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "return to normal mode" })
 vim.keymap.set("n", "<leader>tt", ":tab terminal<CR>", { desc = "open terminal in new tab" })
 vim.keymap.set("n", "<leader>t-", ":new|terminal<CR>", { desc = "open terminal in horizontal split" })
 vim.keymap.set("n", "<leader>t/", ":vnew|terminal<CR>", { desc = "open terminal in vertical split" })
+
+-----------------------
+-- File Types
+-----------------------
+
+vim.filetype.add({
+  extension = {
+    gemfile = 'ruby',
+    rbi = 'ruby'
+  }
+})
