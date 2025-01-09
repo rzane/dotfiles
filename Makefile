@@ -8,7 +8,7 @@ else
 endif
 
 .PHONY: install
-install: nvim zsh git vscode kitty
+install: nvim zsh git vscode kitty zed
 
 .PHONY: nvim
 nvim:
@@ -36,3 +36,9 @@ kitty:
 	mkdir -p $(HOME)/.config/kitty
 	ln -sf $(realpath kitty/kitty.conf) $(HOME)/.config/kitty/kitty.conf
 	ln -sf $(realpath kitty/open-actions.conf) $(HOME)/.config/kitty/open-actions.conf
+
+.PHONY: zed
+zed:
+	mkdir -p $(HOME)/.config/zed
+	ln -sf $(realpath zed/settings.json) $(HOME)/.config/zed/settings.json
+	ln -sf $(realpath zed/keymap.json) $(HOME)/.config/zed/keymap.json
