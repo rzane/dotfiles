@@ -100,8 +100,14 @@ alias gp='git push'
 alias grb='gh repo sync && git rebase'
 alias gbl="git for-each-ref --sort=committerdate refs/heads/ --format='%(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"
 
+function grbi {
+  local commit
+  commit=$(git log --oneline --color=always | fzf --ansi --no-sort --reverse --tiebreak=index | awk '{print $1}')
+  git rebase -i "$commit^"
+}
+
 function g86 {
-  git branch --merged "${1:-main}" | egrep -v "(^\*|${1:-main})" | xargs git branch -d
+  git branch --merged "${1:-main}" | grep -E -v "(^\*|${1:-main})" | xargs git branch -d
 }
 
 ########################
