@@ -27,7 +27,7 @@ If you're on a mac, you can start using ZSH like this:
     $ which zsh | sudo tee -a /etc/shells
     $ chsh -s $(which zsh)
 
-### ASDF
+### Mise en place
 
 ASDF is an all-in-one version manager, and it's great. I have a convenience script for installing the latest Node.js, Ruby, Python, and Elixir.
 
@@ -35,8 +35,4 @@ ASDF is an all-in-one version manager, and it's great. I have a convenience scri
 
 To install a version:
 
-    $ asdf install <language> <version>
-
-To set a given version as the default:
-
-    $ asdf global <language> <version>
+    $ mise use --global <language>@<version>

@@ -1,5 +1,6 @@
 # vi:set ft=ruby
 
+brew "mise"
 brew "nvim"
 brew "ripgrep"
 brew "zsh"
@@ -16,12 +17,10 @@ brew "eza"
 brew "gh"
 brew "jq"
 brew "gnupg"
-brew "erlang"
 brew "git-delta"
 
 cask "google-chrome"
 cask "firefox"
-cask "docker"
 cask "kitty"
 cask "vlc"
 cask "visual-studio-code"
