@@ -17,7 +17,6 @@ znap source zsh-users/zsh-autosuggestions
 znap source zsh-users/zsh-syntax-highlighting
 znap source zsh-users/zsh-history-substring-search
 znap source rupa/z
-znap source ohmyzsh/ohmyzsh plugins/mise
 znap source ohmyzsh/ohmyzsh plugins/vi-mode
 
 ########################
@@ -43,6 +42,10 @@ if [ $commands[nvim] ]; then
   export VISUAL=nvim
 else
   export VISUAL=vim
+fi
+
+if [ $commands[mise] ]; then
+  eval "$(mise activate zsh)"
 fi
 
 if [ $commands[direnv] ]; then
