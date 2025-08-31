@@ -29,7 +29,7 @@ If you're on a mac, you can start using ZSH like this:
 
 ### Mise en place
 
-ASDF is an all-in-one version manager, and it's great. I have a convenience script for installing the latest Node.js, Ruby, Python, and Elixir.
+ASDF is an all-in-one version manager, and it's great. I have a convenience script for installing the latest Node.js, Ruby, and Elixir.
 
     $ bash scripts/stackup.sh
 
