@@ -9,14 +9,7 @@ Run the following command in whichever directory you usually keep your source co
     $ git clone https://github.com/rzane/dotfiles
     $ cd dotfiles
     $ brew bundle
-    $ make
-
-You can install specific sets of dotfiles like so:
-
-    $ make vim
-    $ make zsh
-    $ make git
-    $ make vscode
+    $ ./setup.sh
 
 ### ZSH
 
