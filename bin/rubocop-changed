@@ -2,17 +2,5 @@
 
 set -euo pipefail
 
-branch=main
-
-while [ $# -gt 0 ]; do
-  if [ "$1" == "--" ]; then
-    shift
-    break
-  else
-    branch="$1"
-    shift
-  fi
-done
-
-git diff "$branch" --name-only --relative -- spec/**/*_spec.rb \
-  | xargs bundle exec rubocop -A "$@"
+git diff --cached --name-only --relative -z -- '*.rb' \
+  | xargs --null --no-run-if-empty bundle exec rubocop -A "$@"
