@@ -1,14 +1,8 @@
 SHELL := /bin/bash
 ZSH := $(shell which zsh)
 
-ifeq ($(shell uname -s), Darwin)
-	VSCODE := $(HOME)/Library/Application\ Support/Code/User
-else
-	VSCODE := $(HOME)/.config/Code/User
-endif
-
 .PHONY: install
-install: nvim zsh git vscode kitty zed
+install: nvim zsh git kitty zed
 
 .PHONY: nvim
 nvim:
@@ -23,13 +17,6 @@ zsh:
 .PHONY: git
 git:
 	git config --global include.path $(realpath git/gitconfig)
-
-.PHONY: vscode
-vscode:
-	mkdir -p $(VSCODE)
-	ln -sf $(realpath vscode/settings.json) $(VSCODE)/settings.json
-	ln -sf $(realpath vscode/keybindings.json) $(VSCODE)/keybindings.json
-	cat vscode/extensions.txt | xargs printf -- '--install-extension %s\n' | xargs code
 
 .PHONY: kitty
 kitty:
