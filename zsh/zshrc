@@ -102,6 +102,7 @@ alias gcan='git commit --amend --no-edit'
 alias gp='git push'
 alias grb='gh repo sync && git rebase'
 alias gbl="git for-each-ref --sort=committerdate refs/heads/ --format='%(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"
+alias gcl="git log --color=always --pretty=format:'%C(yellow)%h%C(reset) %s %C(dim)(%an, %ar)%C(reset)' | fzf --ansi --preview 'git show --color=always {1}' --preview-window=right:60%"
 
 function grbi {
   local commit
