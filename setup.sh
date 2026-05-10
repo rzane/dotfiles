@@ -25,11 +25,6 @@ mkdir -p "$HOME/.config/nvim"
 ln -sf "$dotfiles/nvim/init.lua" "$HOME/.config/nvim/init.lua"
 ln -sfn "$dotfiles/nvim/lua" "$HOME/.config/nvim/lua"
 
-# Kitty
-mkdir -p "$HOME/.config/kitty"
-ln -sf "$dotfiles/kitty/kitty.conf" "$HOME/.config/kitty/kitty.conf"
-ln -sf "$dotfiles/kitty/open-actions.conf" "$HOME/.config/kitty/open-actions.conf"
-
 # Zed
 mkdir -p "$HOME/.config/zed"
 ln -sf "$dotfiles/zed/settings.json" "$HOME/.config/zed/settings.json"
