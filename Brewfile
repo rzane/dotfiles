@@ -21,7 +21,7 @@ brew "git-delta"
 
 cask "google-chrome"
 cask "firefox"
-cask "kitty"
+cask "ghostty"
 cask "vlc"
 cask "slack"
 cask "spotify"

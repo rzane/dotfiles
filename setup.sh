@@ -20,6 +20,12 @@ append "source \"$dotfiles/zsh/zshrc\"" "$HOME/.zshrc"
 # Git
 git config --global include.path "$dotfiles/git/gitconfig"
 
+# Ghostty
+mkdir -p "$HOME/.config/ghostty"
+touch "$HOME/.config/ghostty/config"
+append "config-file = \"$dotfiles/ghostty/config.conf\"" "$HOME/.config/ghostty/config"
+append "theme = \"$dotfiles/ghostty/theme.conf\"" "$HOME/.config/ghostty/config"
+
 # NeoVim
 mkdir -p "$HOME/.config/nvim"
 ln -sf "$dotfiles/nvim/init.lua" "$HOME/.config/nvim/init.lua"
