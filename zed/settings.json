@@ -7,16 +7,20 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "theme": "Andromeda",
+  "theme": "Catppuccin Mocha",
+  "ui_font_family": "Dank Mono",
+  "ui_font_size": 16,
+  "buffer_font_family": "Dank Mono",
+  "buffer_font_size": 16,
+  "buffer_font_features": {
+    "calt": false
+  },
+  "tab_size": 2,
+  "wrap_guides": [100, 140],
   "telemetry": {
     "diagnostics": false,
     "metrics": false
   },
-  "tab_size": 2,
-  "ui_font_size": 17,
-  "buffer_font_size": 17,
-  "buffer_font_family": "Dank Mono",
-  "wrap_guides": [100, 140],
   "file_types": {
     "Ruby": ["rbi"]
   },
@@ -30,12 +34,14 @@
   "lsp": {
     "ruby-lsp": {
       "initialization_options": {
+        "formatter": "rubocop",
+        "linter": "rubocop",
         "enabledFeatures": {
-          "diagnostics": false,
-          "formatting": true
+          "diagnostics": false // Zed doesn't support this
         },
-        "experimentalFeaturesEnabled": true,
-        "formatter": "auto" // or "rubocop"
+        "indexing": {
+          "excludedGems": ["docusign_esign", "irs_data"]
+        }
       }
     }
   },
