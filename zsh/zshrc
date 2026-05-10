@@ -183,11 +183,3 @@ function timer {
     printf '%02d:%02d:%02d\r' "$hours" "$minutes" "$seconds"
   done
 }
-
-########################
-# Customization
-########################
-
-if [ -e ~/.zshrc.local ]; then
-  source ~/.zshrc.local
-fi

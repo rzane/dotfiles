@@ -2,23 +2,35 @@
 
 set -euo pipefail
 
+dotfiles=$(realpath "$(dirname "$0")")
+
+append() {
+  grep -qF -- "$1" "$2" || echo "$1" >> "$2"
+}
+
 # Zsh
-ln -sf "$(realpath zsh/zshrc)" "$HOME/.zshrc"
+if [ -L "$HOME/.zshrc" ] && [ "$(readlink "$HOME/.zshrc")" = "$dotfiles/zsh/zshrc" ]; then
+  rm "$HOME/.zshrc"
+  test -f "$HOME/.zshrc.local" && mv "$HOME/.zshrc.local" "$HOME/.zshrc"
+fi
+
+touch "$HOME/.zshrc"
+append "source \"$dotfiles/zsh/zshrc\"" "$HOME/.zshrc"
 
 # Git
-git config --global include.path "$(realpath git/gitconfig)"
+git config --global include.path "$dotfiles/git/gitconfig"
 
 # NeoVim
 mkdir -p "$HOME/.config/nvim"
-ln -sf "$(realpath nvim/init.lua)" "$HOME/.config/nvim/init.lua"
-ln -sfn "$(realpath nvim/lua)" "$HOME/.config/nvim/lua"
+ln -sf "$dotfiles/nvim/init.lua" "$HOME/.config/nvim/init.lua"
+ln -sfn "$dotfiles/nvim/lua" "$HOME/.config/nvim/lua"
 
 # Kitty
 mkdir -p "$HOME/.config/kitty"
-ln -sf "$(realpath kitty/kitty.conf)" "$HOME/.config/kitty/kitty.conf"
-ln -sf "$(realpath kitty/open-actions.conf)" "$HOME/.config/kitty/open-actions.conf"
+ln -sf "$dotfiles/kitty/kitty.conf" "$HOME/.config/kitty/kitty.conf"
+ln -sf "$dotfiles/kitty/open-actions.conf" "$HOME/.config/kitty/open-actions.conf"
 
 # Zed
 mkdir -p "$HOME/.config/zed"
-ln -sf "$(realpath zed/settings.json)" "$HOME/.config/zed/settings.json"
-ln -sf "$(realpath zed/keymap.json)" "$HOME/.config/zed/keymap.json"
+ln -sf "$dotfiles/zed/settings.json" "$HOME/.config/zed/settings.json"
+ln -sf "$dotfiles/zed/keymap.json" "$HOME/.config/zed/keymap.json"
