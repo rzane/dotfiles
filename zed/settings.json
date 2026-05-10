@@ -9,27 +9,23 @@
 {
   "theme": "Catppuccin Mocha",
   "ui_font_family": "Dank Mono",
-  "ui_font_size": 16,
+  "ui_font_size": 18,
   "buffer_font_family": "Dank Mono",
   "buffer_font_size": 16,
   "buffer_font_features": {
-    "calt": false
+    "calt": false,
   },
   "tab_size": 2,
   "wrap_guides": [100, 140],
-  "telemetry": {
-    "diagnostics": false,
-    "metrics": false
-  },
   "file_types": {
-    "Ruby": ["rbi"]
+    "Ruby": ["rbi"],
   },
   "languages": {
     "Ruby": {
       "language_servers": ["ruby-lsp", "sorbet", "!rubocop", "!solargraph"],
       "formatter": "language_server",
-      "format_on_save": "on"
-    }
+      "format_on_save": "on",
+    },
   },
   "lsp": {
     "ruby-lsp": {
@@ -37,21 +33,17 @@
         "formatter": "rubocop",
         "linter": "rubocop",
         "enabledFeatures": {
-          "diagnostics": false // Zed doesn't support this
+          "diagnostics": false, // Zed doesn't support this
         },
         "indexing": {
-          "excludedGems": ["docusign_esign", "irs_data"]
-        }
-      }
-    }
+          "excludedGems": ["docusign_esign", "irs_data"],
+        },
+      },
+    },
   },
   "vim_mode": true,
   "vim": {
-    "use_system_clipboard": "always"
-  },
-  "terminal": {
-    "dock": "right",
-    "default_width": 800
+    "use_system_clipboard": "always",
   },
   "file_scan_exclusions": [
     "**/.git",
@@ -62,6 +54,60 @@
     "**/Thumbs.db",
     "**/.classpath",
     "**/.settings",
-    "**/vendor/gems"
-  ]
+    "**/vendor/gems",
+  ],
+  "project_panel": {
+    "dock": "left",
+    "entry_spacing": "standard",
+    "file_icons": false,
+    "folder_icons": false,
+    "indent_size": 12,
+  },
+  "agent": {
+    "dock": "right",
+  },
+  "agent_servers": {
+    "claude-acp": {
+      "type": "registry",
+    },
+  },
+  "edit_predictions": {
+    "provider": "copilot",
+    "allow_data_collection": "no",
+  },
+  "search": {
+    "button": false,
+  },
+  "status_bar": {
+    "show_active_file": true,
+    "cursor_position_button": false,
+  },
+  "outline_panel": {
+    "button": false,
+  },
+  "collaboration_panel": {
+    "button": false,
+  },
+  "terminal": {
+    "button": false,
+  },
+  "debugger": {
+    "button": false,
+  },
+  "title_bar": {
+    "show_user_menu": false,
+    "show_sign_in": false,
+  },
+  "tab_bar": {
+    "show_nav_history_buttons": false,
+    "show_tab_bar_buttons": false,
+  },
+  "toolbar": {
+    "breadcrumbs": false,
+    "quick_actions": false,
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+  },
 }
