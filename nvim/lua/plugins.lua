@@ -55,6 +55,7 @@ packer.startup(function(use)
   -- Syntax-aware editing
   use {
     'nvim-treesitter/nvim-treesitter',
+    branch = 'master',
     run = function() require("nvim-treesitter.install").update { with_sync = true } end
   }
 
