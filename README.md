@@ -9,7 +9,7 @@ Run the following command in whichever directory you usually keep your source co
     $ git clone https://github.com/rzane/dotfiles
     $ cd dotfiles
     $ brew bundle
-    $ ./setup.sh
+    $ ./scripts/setup.sh
 
 ### ZSH
 
