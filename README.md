@@ -29,3 +29,9 @@ ASDF is an all-in-one version manager, and it's great. I have a convenience scri
 To install a version:
 
     $ mise use --global <language>@<version>
+
+### Fix macos
+
+    $ defaults write -g KeyRepeat -int 2
+    $ defaults write -g InitialKeyRepeat -int 15
+    $ defaults write -g ApplePressAndHoldEnabled -bool false
