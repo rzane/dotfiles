@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-dotfiles=$(realpath "$(dirname "$0")")
+dotfiles=$(realpath "$(dirname "$0")/..")
 
 append() {
   grep -qF -- "$1" "$2" || echo "$1" >> "$2"
