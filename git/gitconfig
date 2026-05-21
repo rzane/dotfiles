@@ -2,6 +2,12 @@
   default = current
 [pull]
   rebase = true
+
+# Use local time
+[log]
+  date = format:%Y-%m-%d %I:%M:%S %p
+
+# Theme
 [color]
   ui     = auto
   diff   = auto
