@@ -7,6 +7,7 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "cli_default_open_behavior": "new_window",
   "theme": "Catppuccin Mocha",
   "ui_font_family": "Dank Mono",
   "ui_font_size": 18,
@@ -56,24 +57,13 @@
     "**/.settings",
     "**/vendor/gems",
   ],
+  "disable_ai": true,
   "project_panel": {
     "dock": "left",
     "entry_spacing": "standard",
     "file_icons": false,
     "folder_icons": false,
     "indent_size": 12,
-  },
-  "agent": {
-    "dock": "right",
-  },
-  "agent_servers": {
-    "claude-acp": {
-      "type": "registry",
-    },
-  },
-  "edit_predictions": {
-    "provider": "copilot",
-    "allow_data_collection": "no",
   },
   "search": {
     "button": false,
