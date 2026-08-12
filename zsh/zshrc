@@ -160,7 +160,7 @@ alias weather='curl wttr.in'
 
 # Find/replace all files in current directory
 function gsub {
-  rg -0 -l "$1" "${@:3}" | xargs -0 perl -pi -e "s/$1/$2/g"
+  rg -0 -l --hidden "$1" "${@:3}" | xargs -0 sd "$1" "$2"
 }
 
 # Convert CSV to JSON

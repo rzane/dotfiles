@@ -18,6 +18,7 @@ brew "gh"
 brew "jq"
 brew "gnupg"
 brew "git-delta"
+brew "sd"
 
 cask "ghostty"
 cask "rectangle"
